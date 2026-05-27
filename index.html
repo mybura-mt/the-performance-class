@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>THE PERFORMANCE CLASS ｜ 体験型パフォーマンス向上 企業研修 講師プラットフォーム</title>
+<meta name="description" content="体験型のパフォーマンス向上 企業研修の、ハイクラス・講師プラットフォーム。オリンピック・RIZIN・ブレイキングダウン――結果を残してきた一流コーチだけが厳選審査制で登録。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Shippori+Mincho:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --bg:#070707;
+    --bg-2:#0d0d0d;
+    --surface:#161616;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.18);
+    --ink:#f5f5f4;
+    --ink-2:#a3a3a3;
+    --ink-3:#6b6b6b;
+    --accent:#c8102e;
+    --accent-2:#e63946;
+    --gold:#c9a14a;
+    --maxw:1280px;
+    --jp:'Noto Sans JP',system-ui,sans-serif;
+    --jp-serif:'Shippori Mincho',serif;
+    --en:'Inter',ui-sans-serif,system-ui;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp);-webkit-font-smoothing:antialiased;line-height:1.7}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  input,select,textarea{font:inherit;color:inherit;background:transparent;border:0;outline:0}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .en{font-family:var(--en);letter-spacing:.04em}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.32em;color:var(--ink-2);text-transform:uppercase}
+  .eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+  .eyebrow.center{justify-content:center}
+  .section-title{font-family:var(--jp-serif);font-weight:700;font-size:clamp(28px,3.4vw,46px);letter-spacing:.04em;line-height:1.35;margin:18px 0 12px}
+  .section-sub{color:var(--ink-2);font-size:15px;max-width:720px}
+  section{position:relative}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+  svg{display:block}
+
+  /* ===== Buttons ===== */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;font-size:13px;font-weight:600;letter-spacing:.06em;border:1px solid var(--line-strong);transition:all .25s ease;cursor:pointer;white-space:nowrap}
+  .btn .arrow{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+  .btn .arrow::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+  .btn:hover{border-color:var(--ink);background:var(--ink);color:#000}
+  .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-primary:hover{background:#fff;color:#000;border-color:#fff}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:#1a1306}
+  .btn-gold:hover{background:#fff;color:#000;border-color:#fff}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+
+  /* ===== Nav ===== */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);background:rgba(7,7,7,.6);border-bottom:1px solid transparent;transition:all .3s ease}
+  .nav.scrolled{background:rgba(7,7,7,.92);border-bottom-color:var(--line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo-mark{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line-strong);position:relative;background:#000}
+  .logo-mark span{font-family:var(--en);font-weight:900;font-size:13px;letter-spacing:.04em;color:#fff}
+  .logo-mark::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-1px;height:3px;background:var(--accent)}
+  .logo-text{line-height:1.15}
+  .logo-text b{display:block;font-family:var(--en);font-weight:800;letter-spacing:.18em;font-size:13px}
+  .logo-text span{display:block;font-size:10px;color:var(--ink-2);letter-spacing:.22em;margin-top:3px;font-weight:500}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:13px;color:var(--ink-2);font-weight:500;letter-spacing:.04em;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  @media (max-width:1180px){
+    .nav-links{display:none}
+    .nav-cta .btn:not(.btn-primary){display:none}
+  }
+
+  /* ===== HERO ===== */
+  .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;padding:140px 0 80px;background:#050505}
+  .hero-bg{position:absolute;inset:0;background-image:url('assets/hero-training.png');background-size:cover;background-position:center 25%;z-index:0;filter:contrast(1.04) saturate(.92)}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.82) 38%,rgba(0,0,0,.35) 62%,rgba(0,0,0,.55) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.1) 25%,rgba(0,0,0,.45) 75%,rgba(0,0,0,.92) 100%),
+      radial-gradient(900px 600px at 78% 30%, rgba(200,16,46,.16), transparent 60%);
+  }
+  .hero-grid{position:absolute;inset:0;z-index:1;background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:80px 80px;
+    mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);
+    pointer-events:none;opacity:.45}
+  .hero-inner{position:relative;z-index:3;width:100%;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+  .hero-tag{display:inline-flex;align-items:center;gap:14px;padding:8px 16px;border:1px solid var(--line-strong);font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--ink);text-transform:uppercase;margin-bottom:30px;background:rgba(0,0,0,.4);backdrop-filter:blur(8px)}
+  .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .hero h1{font-family:var(--jp-serif);font-weight:700;font-size:clamp(28px,4vw,56px);line-height:1.32;letter-spacing:.02em;margin:0 0 26px}
+  .hero h1 .accent{color:var(--accent);font-style:normal}
+  .hero h1 .stroke{position:relative;display:inline-block}
+  .hero h1 .stroke::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.16em;background:linear-gradient(90deg,var(--accent),transparent);z-index:-1;opacity:.7}
+  .hero-lead{color:rgba(245,245,244,.88);font-size:17px;line-height:1.95;max-width:560px;margin:0 0 34px}
+  .hero-lead strong{color:#fff;font-weight:600}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+
+  .hero-domains{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;align-items:center}
+  .hero-domains .lbl{font-family:var(--en);font-size:10px;letter-spacing:.3em;color:var(--ink-3);font-weight:700;margin-right:6px}
+  .hero-domains .dchip{padding:7px 14px;border:1px solid var(--line-strong);background:rgba(8,8,8,.5);backdrop-filter:blur(8px);font-family:var(--jp-serif);font-size:13px;font-weight:700;color:#fff;letter-spacing:.1em;display:inline-flex;align-items:center;gap:8px}
+  .hero-domains .dchip::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .hero-domains .dchip.cross{background:var(--accent);border-color:var(--accent)}
+  .hero-domains .dchip.cross::before{background:#fff}
+
+  .hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line-strong);background:rgba(8,8,8,.55);backdrop-filter:blur(10px);max-width:680px}
+  .hero-kpi{padding:20px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+  .hero-kpi:last-child{border-right:0}
+  .hero-kpi .label{font-family:var(--en);font-size:9.5px;letter-spacing:.28em;color:var(--ink-3);font-weight:700;text-transform:uppercase}
+  .hero-kpi .num{font-family:var(--en);font-size:28px;font-weight:800;color:#fff;letter-spacing:.02em;line-height:1}
+  .hero-kpi .num small{font-size:14px;color:var(--accent);margin-left:2px;font-weight:700}
+  .hero-kpi .sub{font-size:10.5px;color:var(--ink-2);letter-spacing:.04em;line-height:1.4}
+
+  .hero-right{position:relative;align-self:end;justify-self:end;width:100%;max-width:360px}
+  .invite-card{padding:28px 26px;border:1px solid var(--line-strong);background:rgba(8,8,8,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative;overflow:hidden}
+  .invite-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}
+  .invite-card .micro{font-family:var(--en);font-size:10px;letter-spacing:.32em;color:var(--accent);font-weight:700;margin-bottom:14px;display:block}
+  .invite-card h3{font-family:var(--jp-serif);font-size:20px;font-weight:700;margin:0 0 16px;letter-spacing:.04em;line-height:1.5}
+  .invite-card .pcts{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .invite-card .pct-num{font-family:var(--en);font-weight:800;font-size:42px;color:#fff;line-height:1}
+  .invite-card .pct-num span{color:var(--accent);font-size:22px;margin-left:2px}
+  .invite-card .pct-lbl{font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.5;flex:1}
+  .invite-card ul{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:8px}
+  .invite-card li{font-size:12.5px;color:var(--ink);padding-left:18px;position:relative;letter-spacing:.02em;line-height:1.55}
+  .invite-card li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:1px;background:var(--gold)}
+  .invite-card .btn{width:100%;justify-content:center}
+
+  @media (max-width:1024px){
+    .hero-inner{grid-template-columns:1fr}
+    .hero-right{max-width:100%;align-self:start;justify-self:start}
+    .hero-kpis{grid-template-columns:repeat(2,1fr);max-width:100%}
+    .hero-kpi:nth-child(2){border-right:0}
+    .hero-kpi:nth-child(1),.hero-kpi:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+
+  /* ===== Concept (個人→チーム→企業→日本) ===== */
+  .concept{padding:140px 0;background:#070707;border-top:1px solid var(--line);position:relative;overflow:hidden}
+  .concept::before{content:"";position:absolute;inset:0;background-image:url('assets/concept-globe.png');background-size:cover;background-position:center 45%;background-repeat:no-repeat;opacity:.55;mix-blend-mode:screen;pointer-events:none;filter:contrast(1.05) saturate(.95)}
+  .concept::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 600px at 15% 25%,rgba(7,7,7,.85),transparent 60%),
+    radial-gradient(900px 600px at 85% 80%,rgba(7,7,7,.7),transparent 60%),
+    linear-gradient(180deg,rgba(7,7,7,.55) 0%,rgba(7,7,7,.15) 25%,rgba(7,7,7,.4) 65%,rgba(7,7,7,.9) 100%);
+    pointer-events:none}
+
+  /* Japan constellation map (deprecated - replaced by globe bg) */
+  .concept-jp{display:none}
+  .concept-inner{position:relative}
+  .concept-head{text-align:center;margin-bottom:80px;max-width:880px;margin-left:auto;margin-right:auto}
+  .concept-head h2{font-family:var(--jp-serif);font-size:clamp(32px,4.2vw,58px);font-weight:700;line-height:1.4;letter-spacing:.04em;margin:18px 0 24px}
+  .concept-head h2 em{font-style:normal;color:var(--accent)}
+  .concept-head .lead{color:var(--ink-2);font-size:16px;line-height:2;margin:0;letter-spacing:.02em}
+  .concept-head .lead strong{color:#fff;font-weight:600}
+
+  .stair{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end;margin-bottom:60px}
+  .step-col{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:0;min-height:280px;padding:32px 24px;background:linear-gradient(180deg,rgba(20,20,20,.4),rgba(10,10,10,.95));border:1px solid var(--line);transition:all .3s}
+  .step-col:hover{border-color:var(--line-strong);background:linear-gradient(180deg,rgba(25,25,25,.5),rgba(12,12,12,.95))}
+  .step-col:nth-child(1){min-height:240px}
+  .step-col:nth-child(2){min-height:300px}
+  .step-col:nth-child(3){min-height:380px}
+  .step-col:nth-child(4){min-height:480px;background:linear-gradient(180deg,rgba(200,16,46,.18),rgba(150,8,30,.5));border-color:rgba(200,16,46,.5)}
+  .step-col:nth-child(4)::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+  .step-col .stage{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--ink-3);font-weight:700;margin-bottom:auto}
+  .step-col:nth-child(4) .stage{color:#fff}
+  .step-col .ja{font-family:var(--jp-serif);font-size:44px;font-weight:700;letter-spacing:.1em;line-height:1;color:#fff;margin:auto 0 12px}
+  .step-col:nth-child(4) .ja{font-size:54px;color:#fff;text-shadow:0 2px 30px rgba(200,16,46,.6)}
+  .step-col .en{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--ink-2);font-weight:700;margin-bottom:10px}
+  .step-col:nth-child(4) .en{color:rgba(255,255,255,.7)}
+  .step-col .micro{font-size:11.5px;color:var(--ink-2);line-height:1.7;letter-spacing:.02em;padding-top:14px;border-top:1px solid var(--line);margin-top:0}
+  .step-col:nth-child(4) .micro{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.15)}
+
+  .stair-tagline{text-align:center;padding:36px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .stair-tagline .ai{display:inline-flex;align-items:center;gap:14px;font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--accent);font-weight:700;margin-bottom:14px;text-transform:uppercase}
+  .stair-tagline .ai::before,.stair-tagline .ai::after{content:"";width:32px;height:1px;background:var(--accent)}
+  .stair-tagline p{font-family:var(--jp-serif);font-size:clamp(20px,2.4vw,28px);font-weight:700;color:#fff;line-height:1.7;margin:0;letter-spacing:.06em}
+  .stair-tagline p em{font-style:normal;color:var(--accent)}
+
+  /* Concept full-bleed banner */
+  .concept-banner{position:relative;margin-top:48px;border:1px solid var(--line);overflow:hidden;aspect-ratio:16/7;background:#0a0a0a}
+  .concept-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:contrast(1.05) saturate(.95)}
+  .concept-banner::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.05) 25%,rgba(0,0,0,.15) 70%,rgba(0,0,0,.9) 100%),
+    linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 38%,rgba(0,0,0,.05) 62%,rgba(0,0,0,.5) 100%);}
+  .concept-banner .badge{position:absolute;top:24px;left:24px;z-index:3;display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:700;color:#fff;padding:8px 14px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.5);backdrop-filter:blur(8px);text-transform:uppercase}
+  .concept-banner .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .concept-banner .caption{position:absolute;left:32px;right:32px;bottom:28px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .concept-banner .caption .ja{font-family:var(--jp-serif);font-size:clamp(20px,2.4vw,30px);font-weight:700;color:#fff;letter-spacing:.06em;line-height:1.5;max-width:720px;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+  .concept-banner .caption .ja em{font-style:normal;color:var(--accent)}
+  .concept-banner .caption .meta{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:rgba(255,255,255,.78);font-weight:700;text-transform:uppercase;text-align:right;line-height:1.7}
+  .concept-banner .caption .meta span{display:block}
+  .concept-banner .corner-mark{position:absolute;top:24px;right:24px;z-index:3;font-family:var(--en);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.7);font-weight:700;padding:5px 9px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.4);backdrop-filter:blur(6px)}
+  @media (max-width:700px){
+    .concept-banner{aspect-ratio:4/5}
+  }
+
+  @media (max-width:880px){
+    .stair{grid-template-columns:repeat(2,1fr)}
+    .step-col,.step-col:nth-child(1),.step-col:nth-child(2),.step-col:nth-child(3),.step-col:nth-child(4){min-height:220px}
+  }
+
+  /* ===== Matrix Chart (5段階マップ) ===== */
+  .matrix{padding:140px 0;background:#050505;border-top:1px solid var(--line)}
+  .matrix-head{text-align:center;margin-bottom:60px}
+  .matrix-head h2 em{color:var(--gold);font-style:normal}
+  .chart-shell{position:relative;border:1px solid var(--line-strong);background:linear-gradient(180deg,#0a0a0a,#070707);padding:48px 56px 36px;overflow:hidden}
+  .chart-shell::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 80% 20%,rgba(201,161,74,.10),transparent 60%);pointer-events:none}
+  .chart-sub{font-family:var(--jp-serif);font-size:15px;color:#fff;letter-spacing:.1em;font-weight:600;text-align:center;margin:0 0 28px;position:relative}
+  .chart{position:relative;aspect-ratio:1000/520;width:100%;background:#060606;border:1px solid var(--line);border-radius:8px;padding:32px 56px}
+  .chart svg.grid{position:absolute;inset:0;width:100%;height:100%;border-radius:8px}
+  .chart-canvas{position:absolute;left:56px;right:56px;top:32px;bottom:48px}
+  .axis-y{position:absolute;left:-44px;top:0;bottom:0;display:flex;flex-direction:column-reverse;justify-content:space-between;font-family:var(--en);font-size:11px;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
+  .axis-y .tick{transform:translateY(50%)}
+  .axis-x{position:absolute;left:0;right:0;bottom:-28px;display:flex;justify-content:space-between;font-family:var(--en);font-size:11px;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
+  .axis-y-label{position:absolute;left:-80px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:center;font-family:var(--jp);font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.4em;white-space:nowrap}
+  .axis-x-label{position:absolute;right:-8px;bottom:-32px;font-family:var(--jp);font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.2em}
+  .axis-x-label sup{font-family:var(--en);font-size:10px;color:var(--ink-2);margin-left:4px;font-weight:700;vertical-align:super}
+
+  .avg-pill{position:absolute;background:#2dd4d4;color:#001a1a;font-family:var(--jp);font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.06em;z-index:3;box-shadow:0 0 16px rgba(45,212,212,.4)}
+  .avg-pill.v{top:-12px;left:40%;transform:translateX(-50%)}
+  .avg-pill.h{right:-44px;top:46%;transform:translateY(-50%)}
+
+  .dot{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(201,161,74,.18),0 0 24px rgba(201,161,74,.5);transform:translate(-50%,-50%);z-index:4}
+  .dot::before{content:"";position:absolute;inset:-3px;border:1px solid rgba(201,161,74,.4);border-radius:50%}
+
+  .nodelbl{position:absolute;transform:translate(-50%,calc(-100% - 22px));background:rgba(15,12,4,.92);border:1px solid var(--gold);border-radius:14px;padding:10px 16px;min-width:120px;text-align:center;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.6);backdrop-filter:blur(8px)}
+  .nodelbl .name{font-family:var(--jp-serif);font-size:15px;color:var(--gold);font-weight:700;letter-spacing:.06em;line-height:1.2}
+  .nodelbl .lvl{font-family:var(--en);font-size:10.5px;color:rgba(255,255,255,.7);letter-spacing:.06em;font-weight:600;margin-top:4px}
+  .nodelbl.peak{border-color:var(--accent);background:rgba(30,5,10,.92);box-shadow:0 8px 24px rgba(200,16,46,.4)}
+  .nodelbl.peak .name{color:var(--accent)}
+  .nodelbl.peak .lvl{color:#fff}
+  .nodelbl.peak + .dot,.dot.peak{background:var(--accent);box-shadow:0 0 0 6px rgba(200,16,46,.2),0 0 30px rgba(200,16,46,.6)}
+  .dot.peak::before{border-color:rgba(200,16,46,.4)}
+
+  .chart-caption{text-align:center;color:var(--ink-2);font-size:13px;line-height:1.9;margin:32px 0 0;letter-spacing:.04em}
+
+  .style-pills{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:36px}
+  .sp{padding:18px 14px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(20,15,8,.6);text-align:center;font-family:var(--jp-serif);font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff;transition:all .3s;cursor:default}
+  .sp:hover{border-color:var(--gold);background:rgba(201,161,74,.1);color:var(--gold)}
+
+  @media (max-width:1100px){
+    .chart-shell{padding:36px 32px 28px}
+    .chart{padding:24px 40px}
+    .chart-canvas{left:40px;right:40px}
+    .axis-y{left:-30px}
+    .axis-y-label{display:none}
+    .axis-x-label{display:none}
+    .nodelbl{min-width:100px;padding:8px 12px}
+    .nodelbl .name{font-size:13px}
+    .style-pills{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:600px){
+    .chart{aspect-ratio:1/1.1;padding:14px 28px}
+    .nodelbl{min-width:80px;padding:6px 8px}
+    .nodelbl .name{font-size:11px}
+    .nodelbl .lvl{font-size:9px}
+    .dot{width:10px;height:10px}
+    .style-pills{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* ===== Scene Marquee (体験型研修シーン) ===== */
+  .marquee{position:relative;padding:60px 0 70px;background:#040404;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+  .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:18%;z-index:5;pointer-events:none}
+  .marquee::before{left:0;background:linear-gradient(90deg,#040404 0%,rgba(4,4,4,.85) 40%,transparent 100%)}
+  .marquee::after{right:0;background:linear-gradient(270deg,#040404 0%,rgba(4,4,4,.85) 40%,transparent 100%)}
+  .marquee-head{position:relative;z-index:6;text-align:center;margin:0 auto 36px;padding:0 32px;max-width:880px}
+  .marquee-head .eyebrow{justify-content:center}
+  .marquee-head h3{font-family:var(--jp-serif);font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:.06em;color:#fff;margin:14px 0 0;line-height:1.6}
+  .marquee-head h3 em{font-style:normal;color:var(--accent)}
+
+  .marquee-track{display:flex;gap:24px;width:max-content;animation:marquee-rtl 60s linear infinite;will-change:transform}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  @keyframes marquee-rtl{
+    from{transform:translate3d(-50%,0,0)}
+    to  {transform:translate3d(0,0,0)}
+  }
+  .scene{flex:0 0 auto;width:520px;height:330px;border:1px solid var(--line);background:#0a0a0a;position:relative;overflow:hidden}
+  .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(.95)}
+  .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.78) 100%)}
+  .scene .tag{position:absolute;left:18px;bottom:16px;z-index:2;display:flex;flex-direction:column;gap:2px}
+  .scene .tag .num{font-family:var(--en);font-size:10px;letter-spacing:.32em;color:var(--accent);font-weight:700}
+  .scene .tag .ja{font-family:var(--jp-serif);font-size:16px;font-weight:700;color:#fff;letter-spacing:.08em;line-height:1.4}
+  .scene .tag .en-l{font-family:var(--en);font-size:10px;letter-spacing:.28em;color:var(--ink-2);font-weight:600;text-transform:uppercase}
+  .scene .corner{position:absolute;top:14px;right:14px;z-index:2;font-family:var(--en);font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.7);font-weight:700;padding:5px 9px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.4);backdrop-filter:blur(6px)}
+
+  @media (max-width:700px){
+    .scene{width:340px;height:215px}
+    .marquee-track{animation-duration:46s}
+  }
+
+  /* ===== Logo bar (社会的信用) ===== */
+  .credbar{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#050505}
+  .credbar-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between}
+  .credbar .ttl{font-family:var(--en);font-size:11px;letter-spacing:.3em;color:var(--ink-3);font-weight:700;flex:0 0 auto}
+  .credbar .logos{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;flex:1;justify-content:flex-end}
+  .credbar .lg{font-family:var(--jp-serif);font-size:14px;color:var(--ink-2);letter-spacing:.06em;font-weight:600;opacity:.8}
+  .credbar .lg b{color:var(--ink);font-weight:700}
+
+  /* ===== Why us (3 reasons) ===== */
+  .why{padding:140px 0;background:#070707}
+  .why-head{text-align:center;margin-bottom:70px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .why-card{padding:48px 36px 44px;background:#0a0a0a;position:relative;transition:background .3s;min-height:380px;display:flex;flex-direction:column}
+  .why-card:hover{background:#111}
+  .why-card .num{font-family:var(--en);font-size:48px;font-weight:800;color:var(--accent);line-height:1;letter-spacing:0}
+  .why-card .micro{font-family:var(--en);font-size:11px;color:var(--ink-3);letter-spacing:.3em;font-weight:700;margin-top:6px}
+  .why-card h3{font-family:var(--jp-serif);font-size:24px;font-weight:700;margin:24px 0 14px;letter-spacing:.04em;line-height:1.5}
+  .why-card p{color:var(--ink-2);font-size:13.5px;line-height:1.95;margin:0 0 22px;flex:1}
+  .why-card .badge-row{display:flex;flex-wrap:wrap;gap:6px}
+  .why-card .badge-row span{font-size:11px;padding:5px 10px;border:1px solid var(--line);color:var(--ink-2);background:rgba(255,255,255,.02);letter-spacing:.04em}
+  @media (max-width:880px){.why-grid{grid-template-columns:1fr}}
+
+  /* ===== Numbers (large stats) ===== */
+  .nums{padding:120px 0;background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .nums::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 50% 0,rgba(200,16,46,.14),transparent 60%);pointer-events:none}
+  .nums-head{text-align:center;margin-bottom:60px;position:relative}
+  .nums-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .nm{padding:46px 32px;background:#0a0a0a;display:flex;flex-direction:column;gap:12px;transition:background .3s}
+  .nm:hover{background:#121212}
+  .nm .lbl{font-family:var(--en);font-size:10.5px;letter-spacing:.32em;color:var(--ink-3);font-weight:700;text-transform:uppercase}
+  .nm .big{font-family:var(--en);font-size:64px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em}
+  .nm .big sup{font-size:22px;font-weight:700;color:var(--accent);margin-left:2px;vertical-align:top;top:14px;position:relative}
+  .nm .desc{font-size:12.5px;color:var(--ink-2);line-height:1.7;letter-spacing:.02em}
+  @media (max-width:980px){.nums-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.nums-grid{grid-template-columns:1fr}}
+
+  /* ===== Search / Browse UI ===== */
+  .browse{padding:140px 0;background:#050505}
+  .browse-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+  .filter-bar{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr auto;gap:0;border:1px solid var(--line-strong);background:#0a0a0a;margin-bottom:40px}
+  .filter{padding:14px 18px;border-right:1px solid var(--line);position:relative;display:flex;flex-direction:column;gap:4px;min-width:0}
+  .filter:last-of-type{border-right:0}
+  .filter .lab{font-family:var(--en);font-size:9.5px;letter-spacing:.28em;color:var(--ink-3);font-weight:700;text-transform:uppercase}
+  .filter .val{font-size:13.5px;color:#fff;letter-spacing:.02em;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:8px}
+  .filter .val::after{content:"▾";color:var(--ink-3);font-size:10px;margin-left:auto}
+  .filter:first-child .val::after{content:""}
+  .filter input{width:100%;padding:0;line-height:1.4}
+  .filter input::placeholder{color:var(--ink-3)}
+  .filter-search{padding:14px 22px;background:var(--accent);color:#fff;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.14em;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .2s}
+  .filter-search:hover{background:#fff;color:#000}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .chip{font-size:12px;padding:8px 14px;border:1px solid var(--line);color:var(--ink-2);background:rgba(255,255,255,.02);font-weight:500;letter-spacing:.04em;cursor:pointer;transition:all .2s}
+  .chip:hover,.chip.on{border-color:var(--accent);background:rgba(200,16,46,.1);color:#fff}
+
+  .coach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ccard{background:#0a0a0a;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:all .3s;position:relative}
+  .ccard:hover{border-color:var(--line-strong);background:#0e0e0e}
+  .ccard.featured{border-color:rgba(200,16,46,.4)}
+  .ccard.featured::before{content:"FEATURED";position:absolute;top:14px;right:14px;z-index:5;font-family:var(--en);font-size:9px;font-weight:800;letter-spacing:.26em;color:#fff;padding:5px 9px;background:var(--accent)}
+  .ccard.placeholder{opacity:.55;cursor:default}
+  .ccard.placeholder:hover{background:#0a0a0a;border-color:var(--line)}
+  .ccard .portrait{position:relative;height:280px;background:linear-gradient(180deg,#1a1a1a,#050505);overflow:hidden;border-bottom:1px solid var(--line)}
+  .ccard .portrait img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:108%;width:auto;filter:contrast(1.05)}
+  .ccard .portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6) 100%)}
+  .ccard .portrait .role{position:absolute;top:14px;left:14px;font-family:var(--en);font-size:10px;letter-spacing:.28em;color:#fff;font-weight:700;padding:5px 10px;border:1px solid var(--line-strong);background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:3}
+  .ccard .portrait .id{position:absolute;top:14px;right:14px;font-family:var(--en);font-size:10px;letter-spacing:.28em;color:var(--ink-2);font-weight:700;z-index:3}
+  .ccard.featured .portrait .id{display:none}
+  .ccard .body{padding:22px 22px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .ccard .name{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .ccard .name .ja{font-family:var(--jp-serif);font-size:22px;font-weight:700;letter-spacing:.04em}
+  .ccard .name .en{font-family:var(--en);font-size:10px;letter-spacing:.28em;color:var(--ink-3);font-weight:700}
+  .ccard .title-line{font-size:12.5px;color:var(--ink-2);line-height:1.6;letter-spacing:.02em}
+  .ccard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .ccard .tg{font-size:10.5px;padding:4px 9px;border:1px solid var(--line);color:var(--ink-2);background:rgba(255,255,255,.02);letter-spacing:.04em;font-weight:500}
+  .ccard .tg.r{border-color:rgba(200,16,46,.4);color:#fff;background:rgba(200,16,46,.1)}
+  .ccard .tg.g{border-color:rgba(201,161,74,.4);color:#fff;background:rgba(201,161,74,.1)}
+  .ccard .act{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-2);letter-spacing:.04em;transition:background .2s}
+  .ccard:hover .act{background:rgba(200,16,46,.06);color:#fff}
+  .ccard .act .arrow{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+  .ccard .act .arrow::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+  /* placeholder coach */
+  .ccard.placeholder .portrait{background:repeating-linear-gradient(45deg,#0c0c0c 0,#0c0c0c 12px,#0a0a0a 12px,#0a0a0a 24px)}
+  .ccard.placeholder .portrait .ph-mark{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink-3)}
+  .ccard.placeholder .portrait .ph-mark svg{width:48px;height:48px;opacity:.5}
+  .ccard.placeholder .ph-tag{position:absolute;bottom:14px;left:14px;font-family:var(--en);font-size:10px;letter-spacing:.32em;color:var(--ink-2);font-weight:700;padding:5px 10px;border:1px solid var(--line-strong);background:rgba(0,0,0,.6);z-index:3}
+
+  .browse-foot{margin-top:32px;display:flex;justify-content:center;align-items:center;gap:14px}
+  .pager{display:flex;gap:6px;align-items:center}
+  .pager .pg{width:32px;height:32px;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--en);font-size:12px;color:var(--ink-2);font-weight:600}
+  .pager .pg.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  @media (max-width:1100px){
+    .filter-bar{grid-template-columns:1fr 1fr;gap:0}
+    .filter{border-right:0;border-bottom:1px solid var(--line)}
+    .filter:nth-child(odd){border-right:1px solid var(--line)}
+    .filter-search{grid-column:1/-1;justify-content:center}
+    .coach-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){.coach-grid{grid-template-columns:1fr}}
+
+  /* ===== Featured Coach Detail ===== */
+  .coaches-detail{padding:140px 0;background:#050505;position:relative;overflow:hidden}
+  .coaches-detail::before{content:"";position:absolute;inset:0;background-image:
+    radial-gradient(700px 400px at 10% 20%,rgba(200,16,46,.10),transparent 60%),
+    radial-gradient(700px 400px at 90% 80%,rgba(201,161,74,.08),transparent 60%);
+    pointer-events:none}
+  .cdetail-head{text-align:center;margin-bottom:80px;position:relative}
+  .coach{display:grid;grid-template-columns:480px 1fr;gap:80px;align-items:center;padding:60px 0;position:relative}
+  .coach + .coach{margin-top:40px;border-top:1px solid var(--line);padding-top:100px}
+  .coach.alt{grid-template-columns:1fr 480px}
+  .coach.alt .coach-img{order:2}
+  .coach-img{position:relative;height:660px;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 70%,#000 100%);border:1px solid var(--line);overflow:hidden}
+  .coach-img::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 100%,rgba(200,16,46,.25),transparent 60%);z-index:1}
+  .coach.alt .coach-img::before{background:radial-gradient(120% 80% at 50% 100%,rgba(201,161,74,.18),transparent 60%)}
+  .coach-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:104%;width:auto;z-index:2;filter:contrast(1.05)}
+  .coach-img .badge{position:absolute;top:24px;left:24px;z-index:3;display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--ink);padding:8px 14px;border:1px solid var(--line-strong);background:rgba(0,0,0,.5);backdrop-filter:blur(8px)}
+  .coach-img .name-strip{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:3;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+  .coach-img .name-strip .ja{font-family:var(--jp-serif);font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1}
+  .coach-img .name-strip .en{font-family:var(--en);font-size:11px;letter-spacing:.36em;color:var(--ink-2);font-weight:700;margin-top:8px}
+  .coach-img .name-strip .reg{font-family:var(--en);font-size:10px;color:var(--ink-3);letter-spacing:.3em;font-weight:600;text-align:right}
+  .coach-info .eyebrow{margin-bottom:14px}
+  .coach-info h3{font-family:var(--jp-serif);font-size:clamp(26px,2.8vw,38px);font-weight:700;margin:0 0 12px;letter-spacing:.03em;line-height:1.4}
+  .coach-info .role{font-size:14px;color:var(--ink-2);letter-spacing:.06em;margin-bottom:24px;line-height:1.7}
+  .coach-info .quote{font-family:var(--jp-serif);font-size:18px;font-weight:600;line-height:1.7;letter-spacing:.04em;margin:20px 0 24px;padding-left:20px;border-left:2px solid var(--accent)}
+  .coach-info .quote em{font-style:normal;color:var(--accent)}
+  .coach.alt .quote{border-left-color:var(--gold)}
+  .coach.alt .quote em{color:var(--gold)}
+  .credits{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .credits li{background:#0a0a0a;padding:14px 18px;font-size:13px;color:var(--ink);display:flex;gap:12px;align-items:flex-start;letter-spacing:.02em;line-height:1.55}
+  .credits li .ck{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px}
+  .coach.alt .credits li .ck{background:var(--gold)}
+  .stren-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+  .stren{padding:18px 16px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .stren .n{font-family:var(--en);font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.2em}
+  .stren .t{font-family:var(--jp-serif);font-size:13.5px;font-weight:700;margin:8px 0 6px;line-height:1.5}
+  .stren .d{font-size:11px;color:var(--ink-2);line-height:1.7}
+  .coach.alt .stren .n{color:var(--gold)}
+  .coach-cta{display:flex;gap:12px;flex-wrap:wrap}
+  @media (max-width:980px){
+    .coach,.coach.alt{grid-template-columns:1fr;gap:36px}
+    .coach.alt .coach-img{order:0}
+    .coach-img{height:560px}
+    .stren-list{grid-template-columns:1fr}
+  }
+
+  /* ===== Platform flow ===== */
+  .flow{padding:140px 0;background:#070707;background-image:radial-gradient(600px 400px at 90% 10%,rgba(200,16,46,.10),transparent 60%)}
+  .flow-head{text-align:center;margin-bottom:70px}
+  .flow-list{position:relative}
+  .flow-list::before{content:"";position:absolute;top:0;bottom:0;left:90px;width:1px;background:linear-gradient(180deg,transparent,var(--line-strong) 6%,var(--line-strong) 94%,transparent)}
+  .flow-item{position:relative;display:grid;grid-template-columns:180px 1fr 1.2fr;gap:48px;padding:36px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .flow-item:last-child{border-bottom:0}
+  .flow-num{font-family:var(--en);font-size:12px;letter-spacing:.3em;color:var(--ink-3);font-weight:700;padding-left:120px;position:relative}
+  .flow-num .big{display:block;font-size:50px;letter-spacing:0;color:#fff;line-height:1;margin-bottom:8px;font-weight:800}
+  .flow-num .big::first-letter{color:var(--accent)}
+  .flow-num::before{content:"";position:absolute;left:84px;top:14px;width:12px;height:12px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px #070707,0 0 0 5px var(--line-strong)}
+  .flow-body h3{font-family:var(--jp-serif);font-size:22px;font-weight:700;margin:0 0 12px;letter-spacing:.04em}
+  .flow-body p{color:var(--ink-2);font-size:14px;line-height:1.9;margin:0}
+  .flow-tags{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+  .tag{font-size:12px;padding:7px 13px;border:1px solid var(--line);color:var(--ink-2);background:rgba(255,255,255,.02);font-weight:500;letter-spacing:.04em}
+  .tag.r{border-color:rgba(200,16,46,.4);color:#fff;background:rgba(200,16,46,.08)}
+  @media (max-width:900px){
+    .flow-list::before{display:none}
+    .flow-item{grid-template-columns:1fr;gap:16px;padding:28px 0}
+    .flow-num{padding-left:0}
+    .flow-num::before{display:none}
+  }
+
+  /* ===== Pricing ===== */
+  .pricing{padding:140px 0;background:#050505;border-top:1px solid var(--line)}
+  .pricing-head{text-align:center;margin-bottom:60px}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .pc{padding:48px 36px;background:#0a0a0a;display:flex;flex-direction:column;gap:18px;transition:background .3s;position:relative}
+  .pc:hover{background:#101010}
+  .pc.feature{background:linear-gradient(180deg,rgba(200,16,46,.16),rgba(200,16,46,.02))}
+  .pc .badge{position:absolute;top:-1px;right:-1px;background:var(--accent);color:#fff;font-family:var(--en);font-size:10px;letter-spacing:.28em;font-weight:800;padding:6px 12px}
+  .pc .tier{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--accent);font-weight:700}
+  .pc.feature .tier{color:#fff}
+  .pc h3{font-family:var(--jp-serif);font-size:26px;font-weight:700;margin:0;letter-spacing:.04em}
+  .pc .pr{display:flex;align-items:baseline;gap:8px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pc.feature .pr{border-color:rgba(255,255,255,.18)}
+  .pc .pr .num{font-family:var(--en);font-size:38px;font-weight:800;color:#fff;line-height:1}
+  .pc .pr .unit{font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+  .pc .desc{color:var(--ink-2);font-size:13px;line-height:1.85}
+  .pc.feature .desc{color:rgba(255,255,255,.86)}
+  .pc ul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+  .pc li{font-size:13px;color:var(--ink);padding-left:22px;position:relative;letter-spacing:.02em;line-height:1.6}
+  .pc li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:800;font-family:var(--en)}
+  .pc.feature li::before{color:#fff}
+  .pc .btn{justify-content:center}
+  @media (max-width:880px){.price-grid{grid-template-columns:1fr}}
+
+  /* ===== Blog (最新ブログ記事) ===== */
+  .blog{padding:140px 0;background:#070707;border-top:1px solid var(--line)}
+  .blog-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:50px}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .bcard{background:#0a0a0a;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:all .3s;cursor:pointer}
+  .bcard:hover{border-color:var(--line-strong);background:#0e0e0e;transform:translateY(-4px)}
+  .bcard .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line)}
+  .bcard .thumb svg{position:absolute;inset:0;width:100%;height:100%}
+  .bcard .thumb .cat{position:absolute;top:14px;left:14px;font-family:var(--en);font-size:10px;letter-spacing:.28em;font-weight:700;color:#fff;padding:5px 10px;background:rgba(0,0,0,.55);border:1px solid var(--line-strong);backdrop-filter:blur(4px);z-index:3}
+  .bcard .thumb .num{position:absolute;top:14px;right:14px;font-family:var(--en);font-size:11px;letter-spacing:.32em;font-weight:800;color:rgba(255,255,255,.6);z-index:3}
+  .bcard .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .bcard .date{font-family:var(--en);font-size:11px;letter-spacing:.18em;color:var(--ink-3);font-weight:600;display:flex;align-items:center;gap:12px}
+  .bcard .date span{padding-left:12px;border-left:1px solid var(--line);color:var(--ink-2)}
+  .bcard h4{font-family:var(--jp-serif);font-size:19px;font-weight:700;margin:0;letter-spacing:.04em;line-height:1.55;color:#fff}
+  .bcard p{color:var(--ink-2);font-size:13px;line-height:1.85;margin:0;flex:1}
+  .bcard .more{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;padding-top:8px;border-top:1px solid var(--line);margin-top:auto}
+  .bcard .more .arrow{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+  .bcard .more .arrow::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+  .blog-foot{margin-top:48px;text-align:center}
+  @media (max-width:980px){.blog-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.blog-grid{grid-template-columns:1fr}}
+
+  /* ===== FAQ ===== */
+  .faq{padding:140px 0;background:#070707;border-top:1px solid var(--line)}
+  .faq-head{text-align:center;margin-bottom:60px}
+  .faq-list{max-width:920px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line);padding:28px 0}
+  .faq-item summary{display:flex;align-items:flex-start;gap:20px;cursor:pointer;list-style:none;font-family:var(--jp-serif);font-size:17px;font-weight:700;letter-spacing:.04em;line-height:1.6;color:#fff;position:relative;padding-right:40px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::before{content:"Q";font-family:var(--en);font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.04em;flex:0 0 auto;width:24px;padding-top:2px}
+  .faq-item summary::after{content:"";position:absolute;right:0;top:14px;width:14px;height:14px;border-right:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2);transform:rotate(45deg);transition:transform .3s}
+  .faq-item[open] summary::after{transform:rotate(-135deg);top:18px}
+  .faq-item .ans{padding:18px 0 0 44px;color:var(--ink-2);font-size:14px;line-height:2}
+
+  /* ===== Final CTA / dual ===== */
+  .finalcta{padding:140px 0;background:#000;position:relative;overflow:hidden}
+  .finalcta::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 50% 100%,rgba(200,16,46,.25),transparent 60%);pointer-events:none}
+  .finalcta-inner{position:relative;z-index:2}
+  .finalcta-head{text-align:center;margin-bottom:60px}
+  .finalcta h2{font-family:var(--jp-serif);font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.4;margin:18px 0 14px;letter-spacing:.04em}
+  .finalcta h2 em{font-style:normal;color:var(--accent)}
+  .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .duo{padding:60px 48px;background:#0a0a0a;display:flex;flex-direction:column;gap:18px;position:relative;transition:background .3s}
+  .duo:hover{background:#101010}
+  .duo .ico{width:48px;height:48px;border:1px solid var(--line-strong);display:grid;place-items:center}
+  .duo .label{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--accent);font-weight:700}
+  .duo.gold .label{color:var(--gold)}
+  .duo h3{font-family:var(--jp-serif);font-size:26px;font-weight:700;margin:0;letter-spacing:.04em;line-height:1.45}
+  .duo p{color:var(--ink-2);font-size:14px;line-height:1.9;margin:0;flex:1}
+  .duo .btn{align-self:flex-start;margin-top:12px}
+  @media (max-width:880px){.dual-grid{grid-template-columns:1fr}}
+
+  /* ===== Footer ===== */
+  footer{background:#000;border-top:1px solid var(--line);padding:70px 0 40px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+  .foot h6{font-family:var(--en);font-size:11px;color:var(--ink-3);letter-spacing:.3em;font-weight:700;margin:0 0 18px;text-transform:uppercase}
+  .foot ul{list-style:none;padding:0;margin:0}
+  .foot li{padding:6px 0;font-size:13px;color:var(--ink-2)}
+  .foot li a:hover{color:var(--ink)}
+  .foot p{font-size:13px;color:var(--ink-2);line-height:1.9;margin:14px 0 0;max-width:340px}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--en);font-size:11px;color:var(--ink-3);letter-spacing:.2em;flex-wrap:wrap;gap:14px}
+  @media (max-width:880px){.foot{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark"><span>TPC</span></span>
+      <span class="logo-text">
+        <b>THE&nbsp;PERFORMANCE&nbsp;CLASS</b>
+        <span>HIGH&nbsp;CLASS&nbsp;COACH&nbsp;PLATFORM</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#concept">コンセプト</a>
+      <a href="#why">プラットフォームの強み</a>
+      <a href="#browse">コーチを探す</a>
+      <a href="#coaches">講師紹介</a>
+      <a href="#flow">利用の流れ</a>
+      <a href="#blog">ブログ</a>
+      <a href="#pricing">料金プラン</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#join" class="btn btn-ghost">コーチ登録 <span class="arrow"></span></a>
+      <a href="#contact" class="btn btn-primary">企業の方へ <span class="arrow"></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-tag"><span class="dot"></span><span>EXPERIENTIAL&nbsp;×&nbsp;PERFORMANCE&nbsp;×&nbsp;CORPORATE&nbsp;TRAINING</span></div>
+      <h1>
+        体験型で、<span class="accent">結果</span>を出す。<br/>
+        企業の<span class="stroke">パフォーマンス向上</span>に、<br/>
+        一流講師だけが集まる<br/>
+        <span class="accent">プラットフォーム</span>。
+      </h1>
+      <p class="hero-lead">
+        知識や座学ではなく、<strong>身体で体感して変わる</strong>。<br/>
+        オリンピック・世界選手権・RIZIN・ブレイキングダウン――<br/>
+        <strong>結果を残してきたプロコーチ</strong>だけが登録する、<br/>
+        体験型パフォーマンス研修のハイクラス・プラットフォームです。
+      </p>
+      <div class="hero-domains">
+        <span class="lbl">PROGRAM&nbsp;DOMAINS</span>
+        <span class="dchip">身体</span>
+        <span class="dchip">栄養</span>
+        <span class="dchip">メンタル</span>
+        <span class="dchip">思考</span>
+        <span class="dchip cross">体験型</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">企業として研修を依頼 <span class="arrow"></span></a>
+        <a href="#browse" class="btn btn-ghost">登録講師を探す <span class="arrow"></span></a>
+      </div>
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <span class="label">REGISTERED&nbsp;COACHES</span>
+          <span class="num">32<small>名</small></span>
+          <span class="sub">厳選審査制で登録</span>
+        </div>
+        <div class="hero-kpi">
+          <span class="label">CORPORATE&nbsp;CLIENTS</span>
+          <span class="num">80<small>社+</small></span>
+          <span class="sub">中小・成長・上場企業</span>
+        </div>
+        <div class="hero-kpi">
+          <span class="label">EXPERIENTIAL&nbsp;SESSIONS</span>
+          <span class="num">1,200<small>+</small></span>
+          <span class="sub">体験型研修実施数</span>
+        </div>
+        <div class="hero-kpi">
+          <span class="label">SATISFACTION</span>
+          <span class="num">4.8<small>/5</small></span>
+          <span class="sub">参加者評価平均</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="invite-card">
+        <span class="micro">FOR&nbsp;COACHES&nbsp;／&nbsp;招待制登録</span>
+        <h3>結果を残してきた<br/>プロコーチの方へ。</h3>
+        <div class="pcts">
+          <span class="pct-num">8<span>%</span></span>
+          <span class="pct-lbl">応募者のうち、<br/>実際に登録されたコーチの割合</span>
+        </div>
+        <ul>
+          <li>競技・ビジネス両軸での実績審査</li>
+          <li>登録後は企業から直接スカウト</li>
+          <li>事務局による単価・契約サポート</li>
+        </ul>
+        <a href="#join" class="btn btn-gold">コーチ登録の申請 <span class="arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Scene Marquee (体験型研修シーン 横スクロール) ====== -->
+<section class="marquee" aria-label="体験型研修シーン">
+  <div class="marquee-head">
+    <div class="eyebrow">EXPERIENTIAL&nbsp;SCENES&nbsp;／&nbsp;体験型研修のシーン</div>
+    <h3>座学ではなく、<em>体で変わる</em>。<br/>体験型研修のリアル。</h3>
+  </div>
+  <div class="marquee-track">
+    <!-- Loop A -->
+    <div class="scene">
+      <img src="assets/scene-01.png" alt="体験型トレーニングの様子" loading="lazy" />
+      <span class="corner">SCENE&nbsp;01</span>
+      <div class="tag">
+        <span class="num">EXPERIENTIAL</span>
+        <span class="ja">体験型トレーニング</span>
+        <span class="en-l">BODY&nbsp;·&nbsp;FOCUS</span>
+      </div>
+    </div>
+    <div class="scene">
+      <img src="assets/scene-02.png" alt="社員チームトレーニングの様子" loading="lazy" />
+      <span class="corner">SCENE&nbsp;02</span>
+      <div class="tag">
+        <span class="num">TEAM&nbsp;BUILDING</span>
+        <span class="ja">チームトレーニング</span>
+        <span class="en-l">SYNERGY&nbsp;·&nbsp;ENERGY</span>
+      </div>
+    </div>
+    <div class="scene">
+      <img src="assets/scene-03.png" alt="グループディスカッションの様子" loading="lazy" />
+      <span class="corner">SCENE&nbsp;03</span>
+      <div class="tag">
+        <span class="num">DIALOGUE</span>
+        <span class="ja">グループディスカッション</span>
+        <span class="en-l">REFLECTION&nbsp;·&nbsp;ALIGN</span>
+      </div>
+    </div>
+    <div class="scene">
+      <img src="assets/scene-04.png" alt="集中して受講するビジネスパーソンたち" loading="lazy" />
+      <span class="corner">SCENE&nbsp;04</span>
+      <div class="tag">
+        <span class="num">CLASSROOM</span>
+        <span class="ja">集中トレーニング</span>
+        <span class="en-l">FOCUS&nbsp;·&nbsp;LEARN</span>
+      </div>
+    </div>
+    <div class="scene">
+      <img src="assets/scene-05.png" alt="コーチが企業員にレクチャーする様子" loading="lazy" />
+      <span class="corner">SCENE&nbsp;05</span>
+      <div class="tag">
+        <span class="num">KEYNOTE</span>
+        <span class="ja">コーチレクチャー</span>
+        <span class="en-l">VISION&nbsp;·&nbsp;INSIGHT</span>
+      </div>
+    </div>
+    <!-- Loop B (複製) -->
+    <div class="scene" aria-hidden="true">
+      <img src="assets/scene-01.png" alt="" loading="lazy" />
+      <span class="corner">SCENE&nbsp;01</span>
+      <div class="tag">
+        <span class="num">EXPERIENTIAL</span>
+        <span class="ja">体験型トレーニング</span>
+        <span class="en-l">BODY&nbsp;·&nbsp;FOCUS</span>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true">
+      <img src="assets/scene-02.png" alt="" loading="lazy" />
+      <span class="corner">SCENE&nbsp;02</span>
+      <div class="tag">
+        <span class="num">TEAM&nbsp;BUILDING</span>
+        <span class="ja">チームトレーニング</span>
+        <span class="en-l">SYNERGY&nbsp;·&nbsp;ENERGY</span>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true">
+      <img src="assets/scene-03.png" alt="" loading="lazy" />
+      <span class="corner">SCENE&nbsp;03</span>
+      <div class="tag">
+        <span class="num">DIALOGUE</span>
+        <span class="ja">グループディスカッション</span>
+        <span class="en-l">REFLECTION&nbsp;·&nbsp;ALIGN</span>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true">
+      <img src="assets/scene-04.png" alt="" loading="lazy" />
+      <span class="corner">SCENE&nbsp;04</span>
+      <div class="tag">
+        <span class="num">CLASSROOM</span>
+        <span class="ja">集中トレーニング</span>
+        <span class="en-l">FOCUS&nbsp;·&nbsp;LEARN</span>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true">
+      <img src="assets/scene-05.png" alt="" loading="lazy" />
+      <span class="corner">SCENE&nbsp;05</span>
+      <div class="tag">
+        <span class="num">KEYNOTE</span>
+        <span class="ja">コーチレクチャー</span>
+        <span class="en-l">VISION&nbsp;·&nbsp;INSIGHT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Credibility bar ====== -->
+<section class="credbar">
+  <div class="wrap credbar-inner">
+    <span class="ttl">REGISTERED&nbsp;FIELDS&nbsp;／&nbsp;登録コーチの実績フィールド</span>
+    <div class="logos">
+      <span class="lg"><b>OLYMPIC</b>&nbsp;／&nbsp;オリンピック</span>
+      <span class="lg"><b>RIZIN</b></span>
+      <span class="lg"><b>BREAKING&nbsp;DOWN</b></span>
+      <span class="lg"><b>WORLD&nbsp;CHAMPIONSHIP</b></span>
+      <span class="lg"><b>CLINICAL&nbsp;TRIAL</b></span>
+      <span class="lg"><b>PRO&nbsp;SPORTS</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONCEPT (個人→チーム→企業→日本) ====== -->
+<section class="concept" id="concept">
+  <div class="wrap concept-inner">
+    <svg class="concept-jp" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <pattern id="dotpat" patternUnits="userSpaceOnUse" width="7" height="7">
+          <circle cx="3.5" cy="3.5" r="1.1" fill="rgba(255,255,255,.55)"/>
+        </pattern>
+        <mask id="jpmask">
+          <!-- Hokkaido -->
+          <path d="M 380 30 C 430 22 480 48 492 96 C 494 134 466 158 422 156 C 380 154 358 122 360 78 C 360 52 366 38 380 30 Z" fill="white"/>
+          <!-- Honshu -->
+          <path d="M 348 168 C 332 188 326 216 332 248 L 342 268 L 310 280 C 270 290 220 292 180 296 L 130 310 C 100 316 88 320 72 322 L 64 312 C 110 300 168 290 222 282 C 268 278 308 274 326 262 L 332 248 C 330 218 332 196 348 168 Z" fill="white"/>
+          <!-- Shikoku -->
+          <path d="M 188 312 C 212 314 240 320 246 332 C 224 340 196 336 180 326 C 178 320 180 314 188 312 Z" fill="white"/>
+          <!-- Kyushu -->
+          <path d="M 48 290 C 78 286 108 308 114 340 C 116 370 90 384 62 380 C 32 370 22 336 32 308 C 36 298 42 292 48 290 Z" fill="white"/>
+          <!-- Okinawa accents -->
+          <circle cx="30" cy="410" r="7" fill="white"/>
+          <circle cx="54" cy="422" r="5" fill="white"/>
+          <circle cx="78" cy="428" r="4" fill="white"/>
+        </mask>
+        <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff3550" stop-opacity="1"/>
+          <stop offset="60%" stop-color="#c8102e" stop-opacity=".7"/>
+          <stop offset="100%" stop-color="#c8102e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Dot-filled Japan -->
+      <rect width="600" height="440" fill="url(#dotpat)" mask="url(#jpmask)"/>
+
+      <!-- Highlight cities -->
+      <g>
+        <circle class="city" cx="446" cy="94" r="14" fill="url(#cityGlow)"/>
+        <circle cx="446" cy="94" r="2.6" fill="#fff"/>
+        <text class="city-label" x="464" y="98">SAPPORO</text>
+      </g>
+      <g>
+        <circle class="city" cx="322" cy="258" r="16" fill="url(#cityGlow)"/>
+        <circle cx="322" cy="258" r="3" fill="#fff"/>
+        <text class="city-label" x="340" y="262">TOKYO</text>
+      </g>
+      <g>
+        <circle class="city" cx="230" cy="285" r="13" fill="url(#cityGlow)"/>
+        <circle cx="230" cy="285" r="2.4" fill="#fff"/>
+        <text class="city-label" x="180" y="302" text-anchor="start">OSAKA</text>
+      </g>
+      <g>
+        <circle class="city" cx="78" cy="330" r="13" fill="url(#cityGlow)"/>
+        <circle cx="78" cy="330" r="2.4" fill="#fff"/>
+        <text class="city-label" x="96" y="334">FUKUOKA</text>
+      </g>
+
+      <!-- Connection lines (very faint) -->
+      <g stroke="rgba(200,16,46,.18)" stroke-width=".8" fill="none" stroke-dasharray="2 3">
+        <line x1="446" y1="94" x2="322" y2="258"/>
+        <line x1="322" y1="258" x2="230" y2="285"/>
+        <line x1="230" y1="285" x2="78" y2="330"/>
+      </g>
+    </svg>
+    <div class="concept-head reveal">
+      <div class="eyebrow center">CONCEPT</div>
+      <h2>個人が変われば、チームが、<br/>企業が、<em>日本</em>が変わる。</h2>
+      <p class="lead">
+        個人のパフォーマンスを上げることで、<strong>チームが強く</strong>なり、<br/>
+        チームが強くなることで、<strong>企業が強く</strong>なる。そして、<strong>日本全体のパフォーマンス</strong>を上げる。
+      </p>
+    </div>
+
+    <div class="stair reveal">
+      <div class="step-col">
+        <span class="stage" style="color: rgb(255, 255, 255)">STAGE&nbsp;01</span>
+        <span class="ja">個人</span>
+        <span class="en">PERSONAL</span>
+        <span class="micro" style="color: rgb(255, 255, 255)">身体・栄養・メンタル・思考を整え、<br/>個人の能力を最大化。</span>
+      </div>
+      <div class="step-col">
+        <span class="stage" style="color: rgb(255, 255, 255)">STAGE&nbsp;02</span>
+        <span class="ja">チーム</span>
+        <span class="en">TEAM</span>
+        <span class="micro" style="color: rgb(255, 255, 255)">個の状態改善が連鎖し、<br/>チーム力と生産性が高まる。</span>
+      </div>
+      <div class="step-col">
+        <span class="stage" style="color: rgb(255, 255, 255)">STAGE&nbsp;03</span>
+        <span class="ja">企業</span>
+        <span class="en">ENTERPRISE</span>
+        <span class="micro" style="color: rgb(255, 255, 255)">人的資本と健康経営を軸に、<br/>売上・成長・企業価値を向上。</span>
+      </div>
+      <div class="step-col">
+        <span class="stage">FINAL&nbsp;GOAL</span>
+        <span class="ja">日本</span>
+        <span class="en">MAKE&nbsp;JAPAN&nbsp;STRONGER</span>
+        <span class="micro" style="color: rgb(255, 255, 255)">強い個人と強い企業が集まり、<br/>日本全体のパフォーマンスを上げる。</span>
+      </div>
+    </div>
+
+    <div class="stair-tagline reveal" style="background-color: rgb(255, 255, 255); opacity: 0.1">
+      <span class="ai">AI&nbsp;ERA</span>
+      <p>AI時代に<em style="color: rgb(255, 0, 41)">成果を出し続ける</em>個人と企業を、<br/>ハイクラスコーチ陣が伴走サポートします。</p>
+    </div>
+
+    <div class="concept-banner reveal">
+      <img src="assets/concept-banner.png" alt="コーチが経営チームと伴走セッションを行う様子" />
+      <span class="badge">COACHING&nbsp;IN&nbsp;ACTION</span>
+      <span class="corner-mark">Nº&nbsp;001</span>
+      <div class="caption">
+        <div class="ja">経営者の隣に、<em>ハイクラスコーチ</em>を。<br/>伴走し、支え、成果を出し続ける。</div>
+        <div class="meta">
+          <span>BODY&nbsp;·&nbsp;NUTRITION</span>
+          <span>MENTAL&nbsp;·&nbsp;THINKING</span>
+          <span>EXECUTIVE&nbsp;ON-SITE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHY US (3 pillars) ====== -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-head reveal">
+      <div class="eyebrow center">PLATFORM&nbsp;DIFFERENTIATION</div>
+      <h2 class="section-title">なぜ、選ばれているのか。</h2>
+      <p class="section-sub" style="margin:0 auto">
+        単なる紹介サービスではありません。<strong style="color:#fff">「結果」</strong>に責任を持つ、登録メンバー限定の3つの仕組み。
+      </p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="num">01</div>
+        <div class="micro">VETTED&nbsp;BY&nbsp;DESIGN</div>
+        <h3>厳選された一流だけが<br/>登録できる審査制</h3>
+        <p>競技・指導・ビジネス転用の3軸を独自基準で審査。応募者のうち登録に至るのは<strong style="color:#fff">8%以下</strong>。「結果を残さなければ生きていけない」現場で実績を積んだプロのみが在籍します。</p>
+        <div class="badge-row">
+          <span>競技実績審査</span>
+          <span>指導実績審査</span>
+          <span>人物審査</span>
+          <span>事業性審査</span>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <div class="micro">DIRECT&nbsp;MATCH</div>
+        <h3>仲介ではなく、<br/>企業とコーチを直接つなぐ</h3>
+        <p>事務局が一律スクリーニングしたうえで、企業の経営課題に応じた候補コーチを提示。スカウト型でもコーチ指名でもよく、<strong style="color:#fff">中間搾取なし</strong>の透明な料金体系で進められます。</p>
+        <div class="badge-row">
+          <span>スカウト型</span>
+          <span>指名型</span>
+          <span>事務局マッチング</span>
+          <span>料金透明</span>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <div class="micro">RESULTS&nbsp;FIRST</div>
+        <h3>「守り」ではなく<br/>売上を上げる研修に特化</h3>
+        <p>知識やコミュニティ提供型の研修ではなく、<strong style="color:#fff">アスリートの結果思考</strong>を企業へ転用するプログラムだけを取り扱う。身体・栄養・メンタル・思考の4軸で、個人→組織→企業価値へ接続します。</p>
+        <div class="badge-row">
+          <span>身体</span>
+          <span>栄養</span>
+          <span>メンタル</span>
+          <span>思考</span>
+          <span>結果直結</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== MATRIX CHART (厳しさ×専門性 5段階マップ) ====== -->
+<section class="matrix" id="matrix">
+  <div class="wrap">
+    <div class="matrix-head reveal">
+      <div class="eyebrow center">DESIGNED&nbsp;FOR&nbsp;RESULTS</div>
+      <h2 class="section-title">紹介だけで終わらない、<br/><em>成果起点</em>の設計。</h2>
+      <p class="section-sub" style="margin:0 auto">企業文化と対象者の状態に合わせて、講師・負荷・専門性のバランスを設計します。</p>
+    </div>
+
+    <div class="chart-shell reveal">
+      <p class="chart-sub">厳しさ&nbsp;×&nbsp;知識の専門性&nbsp;5段階マップ</p>
+      <div class="chart">
+        <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <!-- subtle grid lines -->
+          <g stroke="rgba(255,255,255,.05)" stroke-width=".2">
+            <line x1="0" y1="0" x2="100" y2="0"/>
+            <line x1="0" y1="25" x2="100" y2="25"/>
+            <line x1="0" y1="50" x2="100" y2="50"/>
+            <line x1="0" y1="75" x2="100" y2="75"/>
+            <line x1="0" y1="100" x2="100" y2="100"/>
+            <line x1="0" y1="0" x2="0" y2="100"/>
+            <line x1="25" y1="0" x2="25" y2="100"/>
+            <line x1="50" y1="0" x2="50" y2="100"/>
+            <line x1="75" y1="0" x2="75" y2="100"/>
+            <line x1="100" y1="0" x2="100" y2="100"/>
+          </g>
+          <!-- average dashed crosshair at level 3 -->
+          <g stroke="#2dd4d4" stroke-width=".3" stroke-dasharray="1.6 1.4" opacity=".75">
+            <line x1="50" y1="0" x2="50" y2="100"/>
+            <line x1="0" y1="50" x2="100" y2="50"/>
+          </g>
+        </svg>
+
+        <!-- Canvas overlay: dots + labels positioned in % -->
+        <div class="chart-canvas">
+          <span class="axis-y-label">厳しさ</span>
+          <div class="axis-y">
+            <span class="tick">1</span>
+            <span class="tick">3</span>
+            <span class="tick">5</span>
+          </div>
+          <span class="axis-x-label">知識の専門性<sup>5</sup></span>
+
+          <!-- average pills -->
+          <span class="avg-pill v">平均</span>
+          <span class="avg-pill h">平均</span>
+
+          <!-- (1,1) 導入 -->
+          <div class="nodelbl" style="left:10%;top:90%">
+            <div class="name">導入</div>
+            <div class="lvl">厳しさ1&nbsp;/&nbsp;専門性1</div>
+          </div>
+          <span class="dot" style="left:10%;top:90%"></span>
+
+          <!-- (2,2) 習慣化 -->
+          <div class="nodelbl" style="left:30%;top:70%">
+            <div class="name">習慣化</div>
+            <div class="lvl">厳しさ2&nbsp;/&nbsp;専門性2</div>
+          </div>
+          <span class="dot" style="left:30%;top:70%"></span>
+
+          <!-- (3,3) 成果重視 -->
+          <div class="nodelbl" style="left:50%;top:50%">
+            <div class="name">成果重視</div>
+            <div class="lvl">厳しさ3&nbsp;/&nbsp;専門性3</div>
+          </div>
+          <span class="dot" style="left:50%;top:50%"></span>
+
+          <!-- (4,4) 高負荷 -->
+          <div class="nodelbl" style="left:70%;top:30%">
+            <div class="name">高負荷</div>
+            <div class="lvl">厳しさ4&nbsp;/&nbsp;専門性4</div>
+          </div>
+          <span class="dot" style="left:70%;top:30%"></span>
+
+          <!-- (5,5) 一流基準 - peak -->
+          <div class="nodelbl peak" style="left:90%;top:10%">
+            <div class="name">一流基準</div>
+            <div class="lvl">厳しさ5&nbsp;/&nbsp;専門性5</div>
+          </div>
+          <span class="dot peak" style="left:90%;top:10%"></span>
+
+          <div class="axis-x">
+            <span>1</span>
+            <span>5</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="chart-caption">企業文化と対象者の状態に合わせて、講師・負荷・専門性のバランスを設計します。</p>
+
+      <div class="style-pills">
+        <div class="sp">単発研修</div>
+        <div class="sp">半年伴走</div>
+        <div class="sp">年間契約</div>
+        <div class="sp">合宿</div>
+        <div class="sp">オンライン</div>
+        <div class="sp">プレミアムカスタム</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Numbers ====== -->
+<section class="nums">
+  <div class="wrap">
+    <div class="nums-head reveal">
+      <div class="eyebrow center">BY&nbsp;THE&nbsp;NUMBERS</div>
+      <h2 class="section-title">数字で見るプラットフォーム</h2>
+    </div>
+    <div class="nums-grid reveal">
+      <div class="nm">
+        <span class="lbl">VETTED&nbsp;PASS&nbsp;RATE</span>
+        <span class="big">8<sup>%</sup></span>
+        <span class="desc">登録審査の通過率。<br/>本物だけを集めるため、合格率を意図的に低く設計。</span>
+      </div>
+      <div class="nm">
+        <span class="lbl">AVG.&nbsp;CAREER</span>
+        <span class="big">17<sup>年</sup></span>
+        <span class="desc">登録コーチの平均キャリア。<br/>競技・指導・臨床現場での平均年数。</span>
+      </div>
+      <div class="nm">
+        <span class="lbl">REPEAT&nbsp;RATE</span>
+        <span class="big">92<sup>%</sup></span>
+        <span class="desc">企業のリピート契約率。<br/>1度の研修で終わらず、年間契約に発展。</span>
+      </div>
+      <div class="nm">
+        <span class="lbl">RESPONSE</span>
+        <span class="big">24<sup>h</sup></span>
+        <span class="desc">企業のお問い合わせから初回提案までの平均時間。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== BROWSE (search + listings) ====== -->
+<section class="browse" id="browse">
+  <div class="wrap">
+    <div class="browse-head reveal">
+      <div>
+        <div class="eyebrow">BROWSE&nbsp;COACHES</div>
+        <h2 class="section-title">登録コーチを探す。</h2>
+      </div>
+      <p class="section-sub">専門領域・実績フィールド・対応形態から、自社に合ったコーチを検索できます。</p>
+    </div>
+
+    <!-- Filter bar -->
+    <form class="filter-bar reveal" onsubmit="event.preventDefault();">
+      <div class="filter">
+        <span class="lab">KEYWORD</span>
+        <input class="val" type="text" placeholder="例：栄養設計、メンタル、合宿…" />
+      </div>
+      <div class="filter">
+        <span class="lab">SPECIALTY&nbsp;／&nbsp;専門領域</span>
+        <span class="val">パフォーマンスコーチ</span>
+      </div>
+      <div class="filter">
+        <span class="lab">FIELD&nbsp;／&nbsp;実績</span>
+        <span class="val">オリンピック</span>
+      </div>
+      <div class="filter">
+        <span class="lab">FORMAT&nbsp;／&nbsp;対応形態</span>
+        <span class="val">訪問・オンライン</span>
+      </div>
+      <button class="filter-search" type="submit">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        SEARCH
+      </button>
+    </form>
+
+    <div class="chips reveal">
+      <span class="chip on">すべて</span>
+      <span class="chip">パフォーマンスコーチ</span>
+      <span class="chip">栄養アドバイザー</span>
+      <span class="chip">メンタルコーチ</span>
+      <span class="chip">フィジカルトレーナー</span>
+      <span class="chip">コンディショニング</span>
+      <span class="chip">レジリエンス</span>
+      <span class="chip">経営者向け</span>
+      <span class="chip">管理職向け</span>
+      <span class="chip">新人向け</span>
+    </div>
+
+    <!-- Coach grid -->
+    <div class="coach-grid reveal">
+
+      <!-- Featured: Yada -->
+      <a class="ccard featured" href="#coach-yada">
+        <div class="portrait">
+          <span class="role">PERFORMANCE&nbsp;COACH</span>
+          <img src="assets/yada.png" alt="矢田 圭一" />
+        </div>
+        <div class="body">
+          <div class="name">
+            <span class="ja">矢田 圭一</span>
+            <span class="en">KEIICHI&nbsp;YADA</span>
+          </div>
+          <div class="title-line">オリンピック日本代表コーチ／VALZA 代表／全日本最優秀コーチ賞 受賞</div>
+          <div class="tags">
+            <span class="tg r">OLYMPIC</span>
+            <span class="tg r">RIZIN</span>
+            <span class="tg">運動・機能改善</span>
+            <span class="tg">メンタル</span>
+            <span class="tg">栄養</span>
+          </div>
+        </div>
+        <div class="act"><span>プロフィールを見る</span><span class="arrow"></span></div>
+      </a>
+
+      <!-- Featured: Konno -->
+      <a class="ccard featured" href="#coach-konno">
+        <div class="portrait">
+          <span class="role">NUTRITION&nbsp;ADVISOR</span>
+          <img src="assets/konno.png" alt="金野 俊憲" />
+        </div>
+        <div class="body">
+          <div class="name">
+            <span class="ja">金野 俊憲</span>
+            <span class="en">TOSHINORI&nbsp;KONNO</span>
+          </div>
+          <div class="title-line">パフォーマンス栄養アドバイザー／ブレイキングダウン公式レフリー／LIGHT CLINIC GINZA 顧問</div>
+          <div class="tags">
+            <span class="tg g">BREAKING&nbsp;DOWN</span>
+            <span class="tg g">CLINICAL</span>
+            <span class="tg">栄養設計</span>
+            <span class="tg">サプリ設計</span>
+            <span class="tg">回復戦略</span>
+          </div>
+        </div>
+        <div class="act"><span>プロフィールを見る</span><span class="arrow"></span></div>
+      </a>
+
+      <!-- Placeholder coaches (現在審査中) -->
+      <div class="ccard placeholder">
+        <div class="portrait">
+          <span class="role">MENTAL&nbsp;COACH</span>
+          <span class="id">No.&nbsp;03</span>
+          <span class="ph-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg></span>
+          <span class="ph-tag">SCREENING</span>
+        </div>
+        <div class="body">
+          <div class="name">
+            <span class="ja">公開準備中</span>
+            <span class="en">COMING&nbsp;SOON</span>
+          </div>
+          <div class="title-line">スポーツメンタルコーチ／プロアスリート 30名以上のメンタル指導。</div>
+          <div class="tags">
+            <span class="tg">メンタル</span>
+            <span class="tg">レジリエンス</span>
+            <span class="tg">経営者向け</span>
+          </div>
+        </div>
+        <div class="act"><span>近日公開</span><span class="arrow"></span></div>
+      </div>
+
+    </div>
+
+    <div class="browse-foot reveal">
+      <div class="pager">
+        <span class="pg on">1</span>
+        <span class="pg">2</span>
+        <span class="pg">3</span>
+        <span class="pg">›</span>
+      </div>
+      <a href="#contact" class="btn btn-ghost" style="margin-left:24px">すべてのコーチを見る <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Featured Coach Detail ====== -->
+<section class="coaches-detail" id="coaches">
+  <div class="wrap">
+    <div class="cdetail-head reveal">
+      <div class="eyebrow center">FEATURED&nbsp;COACHES&nbsp;／&nbsp;主席登録コーチ</div>
+      <h2 class="section-title">勝者を支えてきた、<br/>ハイクラス・コーチ。</h2>
+      <p class="section-sub" style="margin:0 auto">結果を残さなければ生きていけないトップアスリートを育てる、現場のプロフェッショナル。</p>
+    </div>
+
+    <!-- Yada -->
+    <div class="coach reveal" id="coach-yada">
+      <div class="coach-img">
+        <span class="badge"><span style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%"></span>&nbsp;COACH&nbsp;／&nbsp;No.01</span>
+        <img src="assets/yada.png" alt="矢田圭一 プロフィール"/>
+        <div class="name-strip">
+          <div>
+            <div class="ja">矢田 圭一</div>
+            <div class="en">KEIICHI&nbsp;&nbsp;YADA</div>
+          </div>
+          <div class="reg">VALZA&nbsp;CEO</div>
+        </div>
+      </div>
+      <div class="coach-info">
+        <div class="eyebrow">PERFORMANCE&nbsp;COACH&nbsp;／&nbsp;OLYMPIC&nbsp;TEAM&nbsp;COACH</div>
+        <h3>パフォーマンスコーチ／<br/>オリンピック日本代表コーチ</h3>
+        <div class="role">VALZA 代表 ／ 全日本最優秀コーチ賞 受賞 ／ 第一空挺団 出身</div>
+
+        <ul class="credits">
+          <li><span class="ck"></span>東京オリンピック日本代表コーチ</li>
+          <li><span class="ck"></span>全日本最優秀コーチ賞 受賞</li>
+          <li><span class="ck"></span>メダリスト指導実績</li>
+          <li><span class="ck"></span>RIZIN 選手・格闘技チャンピオン指導</li>
+          <li><span class="ck"></span>有名格闘技イベント／リーグ所属</li>
+          <li><span class="ck"></span>第一空挺団 出身</li>
+        </ul>
+
+        <div class="quote">
+          あらゆるフィールドで通用する<br/>
+          <em>パフォーマンス向上の本質</em>を提供します。
+        </div>
+
+        <div class="stren-list">
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;01</div>
+            <div class="t">運動・機能改善</div>
+            <div class="d">身体の動かし方・呼吸・疲労耐性を、運動科学で再設計。</div>
+          </div>
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;02</div>
+            <div class="t">栄養・<br/>コンディショニング</div>
+            <div class="d">食事と回復を設計し、出力できるエネルギーを最大化。</div>
+          </div>
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;03</div>
+            <div class="t">メンタル・思考</div>
+            <div class="d">本番で結果を出すアスリートの思考様式をビジネスへ。</div>
+          </div>
+        </div>
+
+        <div class="coach-cta">
+          <a href="#contact" class="btn btn-primary">このコーチをスカウト <span class="arrow"></span></a>
+          <a href="#contact" class="btn btn-ghost">詳細プロフィール（PDF） <span class="arrow"></span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Konno -->
+    <div class="coach alt reveal" id="coach-konno">
+      <div class="coach-img">
+        <span class="badge"><span style="display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%"></span>&nbsp;ADVISOR&nbsp;／&nbsp;No.02</span>
+        <img src="assets/konno.png" alt="金野俊憲 プロフィール"/>
+        <div class="name-strip">
+          <div>
+            <div class="ja">金野 俊憲</div>
+            <div class="en">TOSHINORI&nbsp;&nbsp;KONNO</div>
+          </div>
+          <div class="reg">REFEREE&nbsp;／&nbsp;BREAKING&nbsp;DOWN</div>
+        </div>
+      </div>
+      <div class="coach-info">
+        <div class="eyebrow">PERFORMANCE&nbsp;NUTRITION&nbsp;ADVISOR</div>
+        <h3>現場 × エビデンス × 栄養の実践で、<br/>結果に変えるパフォーマンス設計を。</h3>
+        <div class="role">パフォーマンス栄養アドバイザー ／ ブレイキングダウン公式レフリー ／ LIGHT CLINIC GINZA 顧問</div>
+
+        <ul class="credits">
+          <li><span class="ck"></span>ブレイキングダウン 公式レフリー</li>
+          <li><span class="ck"></span>がんクリニック顧問（LIGHT CLINIC GINZA）</li>
+          <li><span class="ck"></span>臨床試験を得意とする講師経験</li>
+          <li><span class="ck"></span>アスリート栄養サポート</li>
+          <li><span class="ck"></span>サプリメント設計・回復戦略</li>
+          <li><span class="ck"></span>組織パフォーマンス向上</li>
+        </ul>
+
+        <div class="quote">
+          現場の実践と臨床のエビデンスをつなぐ、<br/>
+          <em>信頼の専門家。</em>
+        </div>
+
+        <div class="stren-list">
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;01</div>
+            <div class="t">ブレない<br/>公平な判断</div>
+            <div class="d">公式レフリーとして培った揺るがない基準と中立の視点。</div>
+          </div>
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;02</div>
+            <div class="t">臨床 × 栄養の<br/>希少な知見</div>
+            <div class="d">原料レベルから語れる、エビデンスの作り方・読み方。</div>
+          </div>
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;03</div>
+            <div class="t">競技知見の<br/>ビジネス翻訳</div>
+            <div class="d">アスリートの「勝つ準備」を経営の判断力と社員の力に翻訳。</div>
+          </div>
+        </div>
+
+        <div class="coach-cta">
+          <a href="#contact" class="btn btn-gold">このコーチをスカウト <span class="arrow"></span></a>
+          <a href="#contact" class="btn btn-ghost">詳細プロフィール（PDF） <span class="arrow"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Platform flow ====== -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="flow-head reveal">
+      <div class="eyebrow center">HOW&nbsp;IT&nbsp;WORKS&nbsp;／&nbsp;企業の利用フロー</div>
+      <h2 class="section-title">利用の流れ</h2>
+      <p class="section-sub" style="margin:0 auto">問い合わせから契約・実施まで、専任の事務局が伴走します。</p>
+    </div>
+    <div class="flow-list reveal">
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">01</span>INQUIRY</div>
+        <div class="flow-body">
+          <h3>お問い合わせ・課題ヒアリング</h3>
+          <p>経営者・人事・現場のいずれの課題からでも。60分の無料ヒアリングで、求める成果と組織課題を整理します。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">60分無料</span>
+          <span class="tag r">オンライン対応</span>
+          <span class="tag r">秘密保持</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">02</span>MATCHING</div>
+        <div class="flow-body">
+          <h3>候補コーチのご提案</h3>
+          <p>課題・対象層・目的に応じて、登録コーチから最適な候補を 2〜3 名ご提案。指名・スカウト型も選択可能です。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag">事務局マッチング</span>
+          <span class="tag">指名型</span>
+          <span class="tag">スカウト型</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">03</span>INTERVIEW</div>
+        <div class="flow-body">
+          <h3>候補コーチとの面談</h3>
+          <p>提案コーチ本人と直接面談。相性・コーチング方針・実施イメージを確認したうえで、進めるか判断いただけます。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">本人と直接対話</span>
+          <span class="tag r">辞退・差し替え可</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">04</span>DESIGN</div>
+        <div class="flow-body">
+          <h3>プログラム設計・契約</h3>
+          <p>厳しさ・知識深さ・実施スタイル・実施方法の 4 軸で完全カスタマイズ。1 回〜年間契約、1〜100 名規模に対応。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag">単発／半年／年間</span>
+          <span class="tag">訪問／オンライン／ハイブリッド</span>
+          <span class="tag">1〜100名規模</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">05</span>DELIVER</div>
+        <div class="flow-body">
+          <h3>プログラム実施・伴走</h3>
+          <p>身体・栄養・メンタル・思考の4軸を体験型で。日常への落とし込み・管理職サポート・AI 活用での継続教育まで一気通貫。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">体験型</span>
+          <span class="tag r">習慣化サポート</span>
+          <span class="tag r">AI継続教育</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">06</span>REVIEW</div>
+        <div class="flow-body">
+          <h3>成果モニタリング・継続提案</h3>
+          <p>定量・定性の効果測定を実施し、次フェーズへ接続。健康経営優良法人取得・人的資本情報開示にも対応します。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag">効果測定</span>
+          <span class="tag">健康経営連携</span>
+          <span class="tag">人的資本開示対応</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRICING ====== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="pricing-head reveal">
+      <div class="eyebrow center">PRICING&nbsp;PLANS</div>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-sub" style="margin:0 auto">企業規模・実施頻度・継続期間に合わせて 3 つのプラン。1 回トライアルから年間契約まで対応します。</p>
+    </div>
+    <div class="price-grid reveal">
+
+      <div class="pc">
+        <span class="tier">PLAN&nbsp;A&nbsp;／&nbsp;TRIAL</span>
+        <h3>シングル<br/>セッション</h3>
+        <div class="pr">
+          <span class="num">¥350,000</span>
+          <span class="unit">／ 1セッション</span>
+        </div>
+        <p class="desc">まずは試してみたい企業向け。コーチ 1 名・最大 30 名規模の単発実施。導入の入口として最適なプランです。</p>
+        <ul>
+          <li>事務局マッチング</li>
+          <li>コーチとの事前面談</li>
+          <li>90〜180 分セッション</li>
+          <li>オンライン／訪問選択</li>
+          <li>事後アンケート分析</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">このプランで相談 <span class="arrow"></span></a>
+      </div>
+
+      <div class="pc feature">
+        <span class="badge">MOST&nbsp;POPULAR</span>
+        <span class="tier">PLAN&nbsp;B&nbsp;／&nbsp;PROGRAM</span>
+        <h3>カスタム<br/>プログラム</h3>
+        <div class="pr">
+          <span class="num">¥1,200,000〜</span>
+          <span class="unit">／ 半年〜年間</span>
+        </div>
+        <p class="desc">対象層・成果目標に合わせた完全カスタマイズ型。経営層・管理職・新人それぞれに最適化したコース設計。</p>
+        <ul>
+          <li>シングルセッションの全機能</li>
+          <li>コーチ複数名の組合せ対応</li>
+          <li>半年〜年間の継続支援</li>
+          <li>習慣化・AI 継続教育</li>
+          <li>四半期効果レビュー</li>
+          <li>健康経営連携サポート</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">このプランで相談 <span class="arrow"></span></a>
+      </div>
+
+      <div class="pc">
+        <span class="tier">PLAN&nbsp;C&nbsp;／&nbsp;ENTERPRISE</span>
+        <h3>プレミアム<br/>エンタープライズ</h3>
+        <div class="pr">
+          <span class="num">ASK</span>
+          <span class="unit">／ 個別お見積</span>
+        </div>
+        <p class="desc">経営層・グループ全社規模での導入。役員向け合宿・全国展開・人的資本情報開示まで、戦略パートナーとして並走。</p>
+        <ul>
+          <li>カスタムプログラムの全機能</li>
+          <li>専任コンシェルジュ</li>
+          <li>役員合宿・経営者ワーク</li>
+          <li>100 名以上の全国展開</li>
+          <li>人的資本情報開示サポート</li>
+          <li>ブランディング連携</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">このプランで相談 <span class="arrow"></span></a>
+      </div>
+
+    </div>
+    <p style="margin-top:24px;text-align:center;color:var(--ink-3);font-size:12px;letter-spacing:.04em">表示価格は税抜・目安。実施規模・期間・拠点数によりお見積りいたします。</p>
+  </div>
+</section>
+
+<!-- ====== BLOG (最新記事) ====== -->
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="blog-head reveal">
+      <div>
+        <div class="eyebrow">LATEST&nbsp;INSIGHTS</div>
+        <h2 class="section-title">最新の記事</h2>
+      </div>
+      <p class="section-sub">コーチ陣・事務局が発信する、企業パフォーマンス向上の現場ノートとインサイト。</p>
+    </div>
+
+    <div class="blog-grid reveal">
+      <a class="bcard" href="#">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="bg-a" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1a0a10"/>
+                <stop offset="1" stop-color="#050505"/>
+              </linearGradient>
+              <radialGradient id="glow-a" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="rgba(200,16,46,.55)"/>
+                <stop offset="1" stop-color="rgba(200,16,46,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#bg-a)"/>
+            <circle cx="280" cy="125" r="110" fill="url(#glow-a)"/>
+            <g stroke="rgba(255,255,255,.12)" stroke-width=".8" fill="none">
+              <circle cx="280" cy="125" r="60"/>
+              <circle cx="280" cy="125" r="90"/>
+              <path d="M 220 125 L 340 125 M 280 65 L 280 185"/>
+              <path d="M 280 125 L 320 85" stroke="#c8102e" stroke-width="1.5"/>
+            </g>
+            <circle cx="280" cy="125" r="5" fill="#c8102e"/>
+            <circle cx="320" cy="85" r="4" fill="#fff"/>
+            <text x="40" y="218" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="rgba(255,255,255,.92)" letter-spacing="-0.5">04:30</text>
+            <text x="40" y="232" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.5)" letter-spacing="3">A.M.　ROUTINE</text>
+          </svg>
+          <span class="cat">PERFORMANCE</span>
+          <span class="num">Nº&nbsp;012</span>
+        </div>
+        <div class="body">
+          <div class="date">2026.05.20<span>READ&nbsp;6&nbsp;MIN</span></div>
+          <h4>AI時代に成果を出し続ける経営者が、毎朝やっている3つのこと。</h4>
+          <p>トップアスリートと一流経営者に共通する「朝のルーティン」。決断の質を上げるために現場のコーチが推奨する、身体・思考・部屋の設計を解説。</p>
+          <span class="more">READ&nbsp;ARTICLE <span class="arrow"></span></span>
+        </div>
+      </a>
+
+      <a class="bcard" href="#">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="bg-b" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#11161c"/>
+                <stop offset="1" stop-color="#050505"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#bg-b)"/>
+            <g stroke="rgba(45,212,212,.4)" stroke-width="1.2" fill="none">
+              <path d="M 20 200 C 70 200, 90 130, 130 130 S 180 200, 220 200 S 280 70, 320 70 S 380 200, 400 200"/>
+              <path d="M 20 220 C 70 220, 90 180, 130 180 S 180 220, 220 220 S 280 140, 320 140 S 380 220, 400 220" stroke="rgba(45,212,212,.18)"/>
+            </g>
+            <g fill="#2dd4d4">
+              <circle cx="130" cy="130" r="4"/>
+              <circle cx="320" cy="70" r="4"/>
+            </g>
+            <text x="30" y="50" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,.55)" letter-spacing="4">RECOVERY&nbsp;·&nbsp;HRV</text>
+            <text x="30" y="90" font-family="Shippori Mincho, serif" font-size="34" font-weight="700" fill="#fff">攀めの回復</text>
+          </svg>
+          <span class="cat">RECOVERY</span>
+          <span class="num">Nº&nbsp;011</span>
+        </div>
+        <div class="body">
+          <div class="date">2026.05.12<span>READ&nbsp;8&nbsp;MIN</span></div>
+          <h4>「攻めの回復」がチームを変える―アスリート式リカバリーの組織導入。</h4>
+          <p>休むことは生産性。世界レベルのアスリートが実践する回復戦略をビジネスチームに転用する、具体的な仕組みとケーススタディ。</p>
+          <span class="more">READ&nbsp;ARTICLE <span class="arrow"></span></span>
+        </div>
+      </a>
+
+      <a class="bcard" href="#">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="bg-c" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1c1810"/>
+                <stop offset="1" stop-color="#050505"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#bg-c)"/>
+            <g transform="translate(280,125)" stroke="rgba(201,161,74,.55)" fill="none">
+              <circle r="70" stroke-width="1.4"/>
+              <circle r="50" stroke-width="1"/>
+              <circle r="30" stroke-width=".8"/>
+              <path d="M -70 0 L 70 0 M 0 -70 L 0 70" stroke-width=".6"/>
+              <g fill="#c9a14a" stroke="none">
+                <circle cx="35" cy="-30" r="3.5"/>
+                <circle cx="-25" cy="-40" r="3"/>
+                <circle cx="-45" cy="15" r="3"/>
+                <circle cx="20" cy="45" r="3.5"/>
+              </g>
+            </g>
+            <text x="30" y="60" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,.55)" letter-spacing="4">NUTRITION&nbsp;DESIGN</text>
+            <text x="30" y="110" font-family="Shippori Mincho, serif" font-size="40" font-weight="700" fill="#fff">食と心</text>
+            <text x="30" y="148" font-family="Shippori Mincho, serif" font-size="40" font-weight="700" fill="#c9a14a">の交点</text>
+          </svg>
+          <span class="cat">NUTRITION</span>
+          <span class="num">Nº&nbsp;010</span>
+        </div>
+        <div class="body">
+          <div class="date">2026.04.28<span>READ&nbsp;5&nbsp;MIN</span></div>
+          <h4>メンタル不調を予防する、栄養設計の現場ノート。</h4>
+          <p>食事はメンタルの土台。臨床現場とトップ選手の両方をサポートしてきた専門家が、組織に効く栄養設計の基本を語ります。</p>
+          <span class="more">READ&nbsp;ARTICLE <span class="arrow"></span></span>
+        </div>
+      </a>
+    </div>
+
+    <div class="blog-foot reveal">
+      <a href="#" class="btn btn-ghost">すべての記事を見る <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <div class="eyebrow center">FAQ</div>
+      <h2 class="section-title">よくあるご質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>登録コーチの審査基準を教えてください。</summary>
+        <div class="ans">競技・指導・ビジネス転用の 3 軸で審査します。具体的には、①国際／国内大会レベルの競技実績または指導実績、②現場での結果を残す実証経験、③経営層へ届く言語化能力・人物面の信頼性、を独自基準で評価。応募者のうち登録に至るのは 8% 以下です。</div>
+      </details>
+      <details class="faq-item">
+        <summary>1 回・少人数からでも依頼できますか？</summary>
+        <div class="ans">はい、1 回・1〜10 名規模のスポット依頼から対応可能です。経営者個人のパーソナルコーチング、役員合宿、新人研修まで、規模・頻度を問わずご相談いただけます。</div>
+      </details>
+      <details class="faq-item">
+        <summary>コーチを指名することはできますか？</summary>
+        <div class="ans">可能です。Webサイトで公開している登録コーチを直接指名（スカウト）いただくこともできますし、課題のみを伝えていただき事務局からマッチングを提案することも可能です。指名後の本人面談で辞退・差し替えも自由に行えます。</div>
+      </details>
+      <details class="faq-item">
+        <summary>オンライン対応は可能ですか？</summary>
+        <div class="ans">対応可能です。訪問・オンライン・ハイブリッド（一部実地＋一部オンライン）の 3 形態から選択いただけます。多拠点・リモート組織にも対応します。</div>
+      </details>
+      <details class="faq-item">
+        <summary>健康経営優良法人の取得支援には対応していますか？</summary>
+        <div class="ans">対応しています。運動・栄養・メンタルの全領域に対応するプログラム設計で、健康経営優良法人の主要評価項目をカバーできます。また人的資本情報開示にも対応した実施レポートを提供しています。</div>
+      </details>
+      <details class="faq-item">
+        <summary>料金プラン以外のカスタマイズはできますか？</summary>
+        <div class="ans">可能です。表示プランはあくまで目安で、企業規模・実施期間・対象人数・拠点数・成果目標に応じて個別に設計します。プレミアムエンタープライズプランでは、専任コンシェルジュが伴走しオーダーメイドで構築します。</div>
+      </details>
+      <details class="faq-item">
+        <summary>コーチとして登録したい場合は？</summary>
+        <div class="ans">「コーチ登録の申請」よりエントリーいただけます。書類審査 → 面談 → 実技 / プログラム審査の 3 段階で選考し、合格された方のみプラットフォームに登録されます。登録後は事務局による単価・契約サポートを受けながら、企業からのスカウトをお待ちいただけます。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Final CTA ====== -->
+<section class="finalcta" id="contact">
+  <div class="wrap finalcta-inner">
+    <div class="finalcta-head reveal">
+      <div class="eyebrow center">START&nbsp;／&nbsp;まずはここから</div>
+      <h2>結果を残す、<em>本物のコーチ</em>と<br/>つながる。</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">企業の方／コーチの方、それぞれの入口をご用意しています。</p>
+    </div>
+    <div class="dual-grid reveal">
+      <div class="duo">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/><path d="M3 19h18"/></svg>
+        </div>
+        <div class="label">FOR&nbsp;ENTERPRISES&nbsp;／&nbsp;企業の方</div>
+        <h3>御社の課題に合わせて、<br/>最適なコーチをご提案します。</h3>
+        <p>役員・人事・現場、どの層の課題からでも。60分の無料ヒアリングで、最適なコーチと最適なプランをご提案します。資料請求も同時にお受けします。</p>
+        <a href="#" class="btn btn-primary">60分無料ヒアリング・資料請求 <span class="arrow"></span></a>
+      </div>
+      <div class="duo gold" id="join">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/><path d="M19 5l2 2 4-4" transform="translate(-3 -1)"/></svg>
+        </div>
+        <div class="label">FOR&nbsp;COACHES&nbsp;／&nbsp;コーチの方</div>
+        <h3>結果を残してきた<br/>プロコーチの方へ。</h3>
+        <p>競技・指導・臨床現場で結果を出してきた方のための、招待制のプラットフォームです。書類審査・面談・実技審査の3段階を経て登録されます。</p>
+        <a href="#" class="btn btn-gold">コーチ登録の申請 <span class="arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Footer ====== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top">
+          <span class="logo-mark"><span>TPC</span></span>
+          <span class="logo-text">
+            <b>THE&nbsp;PERFORMANCE&nbsp;CLASS</b>
+            <span>HIGH&nbsp;CLASS&nbsp;COACH&nbsp;PLATFORM</span>
+          </span>
+        </a>
+        <p>厳選された一流のパフォーマンスコーチだけが登録する、登録メンバー限定のハイクラス プラットフォーム。</p>
+      </div>
+      <div>
+        <h6>SERVICE</h6>
+        <ul>
+          <li><a href="#why">プラットフォームの強み</a></li>
+          <li><a href="#browse">コーチを探す</a></li>
+          <li><a href="#coaches">講師紹介</a></li>
+          <li><a href="#flow">利用の流れ</a></li>
+          <li><a href="#pricing">料金プラン</a></li>
+          <li><a href="#blog">ブログ・記事</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>COACHES</h6>
+        <ul>
+          <li><a href="#coach-yada">矢田 圭一</a></li>
+          <li><a href="#coach-konno">金野 俊憲</a></li>
+          <li><a href="#join">コーチ登録の申請</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>CONTACT</h6>
+        <ul>
+          <li><a href="#contact">60分無料ヒアリング</a></li>
+          <li><a href="#contact">資料請求</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 THE PERFORMANCE CLASS ／ VALZA × REFEREE KONNO</span>
+      <span>JAPAN&nbsp;／&nbsp;ONLINE&nbsp;・&nbsp;OFFLINE</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',(e)=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){
+        const el=document.querySelector(id);
+        if(el){ e.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 60, behavior:'smooth'}); }
+      }
+    });
+  });
+
+  // Filter chips toggle
+  document.querySelectorAll('.chip').forEach(c=>{
+    c.addEventListener('click', ()=>{
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+      c.classList.add('on');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+<style id="__om-edit-overrides">
+#concept .stair-tagline >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >span:nth-child(1) { color: rgb(255, 0, 0) !important }
+</style>
