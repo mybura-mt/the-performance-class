@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>High Performance Coaching — 企業研修｜矢田圭一 × 金野俊憲</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Shippori+Mincho:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --bg:#070707;
+    --bg-2:#0d0d0d;
+    --bg-3:#131313;
+    --surface:#161616;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.18);
+    --ink:#f5f5f4;
+    --ink-2:#a3a3a3;
+    --ink-3:#6b6b6b;
+    --accent:#c8102e;        /* athletic red */
+    --accent-2:#e63946;
+    --gold:#c9a14a;
+    --maxw:1280px;
+    --jp:'Noto Sans JP',system-ui,sans-serif;
+    --jp-serif:'Shippori Mincho',serif;
+    --en:'Inter',ui-sans-serif,system-ui;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp);-webkit-font-smoothing:antialiased;line-height:1.7}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  ::selection{background:var(--accent);color:#fff}
+
+  /* ——— Utility ——— */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .en{font-family:var(--en);letter-spacing:.04em}
+  .serif{font-family:var(--jp-serif)}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.32em;color:var(--ink-2);text-transform:uppercase}
+  .eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+  .section-title{font-family:var(--jp-serif);font-weight:700;font-size:clamp(28px,3.4vw,46px);letter-spacing:.04em;line-height:1.35;margin:18px 0 12px}
+  .section-sub{color:var(--ink-2);font-size:15px;max-width:720px}
+  section{position:relative}
+  .divider{height:1px;background:var(--line);width:100%}
+
+  /* ——— Nav ——— */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);background:rgba(7,7,7,.6);border-bottom:1px solid transparent;transition:all .3s ease}
+  .nav.scrolled{background:rgba(7,7,7,.88);border-bottom-color:var(--line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo-mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line-strong);position:relative}
+  .logo-mark::before,.logo-mark::after{content:"";position:absolute;background:var(--accent)}
+  .logo-mark::before{width:14px;height:2px;top:9px;left:11px;transform:rotate(-25deg)}
+  .logo-mark::after{width:14px;height:2px;bottom:9px;left:11px;transform:rotate(25deg)}
+  .logo-text{line-height:1.1}
+  .logo-text b{display:block;font-family:var(--en);font-weight:800;letter-spacing:.18em;font-size:13px}
+  .logo-text span{display:block;font-size:11px;color:var(--ink-2);letter-spacing:.18em;margin-top:3px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:13px;color:var(--ink-2);font-weight:500;letter-spacing:.04em;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;font-size:13px;font-weight:600;letter-spacing:.08em;border:1px solid var(--line-strong);transition:all .25s ease;cursor:pointer;white-space:nowrap}
+  .btn .arrow{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+  .btn .arrow::after{content:"";position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+  .btn:hover{border-color:var(--ink);background:var(--ink);color:#000}
+  .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-primary:hover{background:#fff;color:#000;border-color:#fff}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+  .menu-toggle{display:none}
+  @media (max-width:1000px){
+    .nav-links{display:none}
+    .nav-cta .btn:not(.btn-primary){display:none}
+  }
+
+  /* ——— Hero ——— */
+  .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;padding:140px 0 80px;background:
+    radial-gradient(900px 600px at 80% 30%, rgba(200,16,46,.22), transparent 60%),
+    radial-gradient(700px 500px at 10% 80%, rgba(255,255,255,.04), transparent 60%),
+    #050505;}
+  .hero-grid{position:absolute;inset:0;background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:80px 80px;
+    mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);
+    pointer-events:none;
+  }
+  .hero-noise{position:absolute;inset:0;opacity:.06;pointer-events:none;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.6'/></svg>");}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;width:100%}
+  .hero-tag{display:inline-flex;align-items:center;gap:14px;padding:8px 16px;border:1px solid var(--line-strong);font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--ink-2);text-transform:uppercase;margin-bottom:36px}
+  .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .hero h1{font-family:var(--jp-serif);font-weight:700;font-size:clamp(36px,5.4vw,76px);line-height:1.18;letter-spacing:.02em;margin:0 0 32px}
+  .hero h1 .accent{color:var(--accent);font-style:normal}
+  .hero h1 .stroke{position:relative}
+  .hero h1 .stroke::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.18em;background:linear-gradient(90deg,var(--accent),transparent);z-index:-1;opacity:.7}
+  .hero-lead{color:var(--ink-2);font-size:17px;line-height:1.95;max-width:540px;margin:0 0 44px;font-weight:400}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-marks{display:flex;gap:36px;margin-top:60px;flex-wrap:wrap}
+  .hero-mark{display:flex;align-items:center;gap:14px}
+  .hero-mark .num{font-family:var(--en);font-weight:800;font-size:34px;line-height:1;color:#fff}
+  .hero-mark .num .pct{color:var(--accent);font-size:22px;margin-left:2px}
+  .hero-mark .lbl{font-size:11px;color:var(--ink-2);letter-spacing:.16em;line-height:1.5;text-transform:uppercase;font-family:var(--en);font-weight:600}
+
+  .hero-visual{position:relative;height:560px}
+  .hero-card{position:absolute;background:linear-gradient(180deg,#1a1a1a,#0a0a0a);border:1px solid var(--line);overflow:hidden}
+  .hv-yada{width:62%;height:88%;right:0;top:0;background:linear-gradient(180deg,#1a1a1a 0%,#000 100%)}
+  .hv-konno{width:54%;height:60%;left:0;bottom:0;border-color:var(--line-strong);background:linear-gradient(180deg,#161616,#050505)}
+  .hero-card img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:108%;width:auto;filter:contrast(1.04) brightness(.95)}
+  .hero-card .card-meta{position:absolute;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:flex-start;z-index:2}
+  .hero-card .card-meta .role{font-size:10px;letter-spacing:.28em;color:var(--ink-2);text-transform:uppercase;font-family:var(--en);font-weight:600}
+  .hero-card .card-meta .id{font-family:var(--en);font-size:10px;letter-spacing:.3em;color:var(--ink-3);font-weight:600}
+  .hero-card .card-name{position:absolute;bottom:18px;left:18px;right:18px;z-index:2}
+  .hero-card .card-name .ja{font-family:var(--jp-serif);font-size:22px;font-weight:700}
+  .hero-card .card-name .en-name{font-family:var(--en);font-size:10px;letter-spacing:.3em;color:var(--ink-2);margin-top:4px;font-weight:600}
+  .hero-card .card-bar{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);z-index:2}
+  .hv-konno .card-bar{background:var(--gold)}
+
+  .hero-side-label{position:absolute;right:-110px;top:50%;transform:rotate(90deg);transform-origin:left center;font-family:var(--en);font-size:10px;letter-spacing:.5em;color:var(--ink-3);font-weight:600;text-transform:uppercase}
+
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr}
+    .hero-visual{height:480px;margin-top:30px}
+  }
+
+  /* ——— Section: 個人→組織→企業 ——— */
+  .pyramid{padding:140px 0;background:#0a0a0a;border-top:1px solid var(--line)}
+  .pyramid-head{text-align:center;margin-bottom:80px}
+  .pyramid-head .section-sub{margin:18px auto 0}
+  .pyramid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .pyr-card{padding:48px 36px 44px;background:#0a0a0a;position:relative;transition:background .3s ease;min-height:340px;display:flex;flex-direction:column}
+  .pyr-card:hover{background:#111}
+  .pyr-card .step{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--ink-3);font-weight:700}
+  .pyr-card .step b{color:var(--accent)}
+  .pyr-card h3{font-family:var(--jp-serif);font-size:32px;font-weight:700;margin:18px 0 14px;letter-spacing:.04em}
+  .pyr-card .desc{color:var(--ink-2);font-size:14px;line-height:1.9;flex:1}
+  .pyr-card .icon{margin-top:24px;width:48px;height:48px;border:1px solid var(--line-strong);display:grid;place-items:center}
+  .pyr-card:nth-child(1) h3 .em,
+  .pyr-card:nth-child(2) h3 .em,
+  .pyr-card:nth-child(3) h3 .em{color:var(--accent)}
+  .pyr-card::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:var(--accent);transition:width .4s ease}
+  .pyr-card:hover::before{width:100%}
+  .pyr-arrow{display:none}
+  @media (max-width:880px){
+    .pyramid-grid{grid-template-columns:1fr}
+  }
+
+  /* ——— Strengths / プログラムの特徴 ——— */
+  .strengths{padding:140px 0;background:linear-gradient(180deg,#0a0a0a,#050505)}
+  .strength-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+  .feature-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .feature{padding:40px 28px;background:#0a0a0a;min-height:300px;display:flex;flex-direction:column;transition:background .3s}
+  .feature:hover{background:#121212}
+  .feature .num{font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--accent)}
+  .feature .ico{margin:24px 0 22px;width:42px;height:42px;display:grid;place-items:center;color:var(--ink)}
+  .feature h4{font-family:var(--jp-serif);font-size:20px;font-weight:700;margin:0 0 14px;letter-spacing:.04em;line-height:1.45}
+  .feature p{color:var(--ink-2);font-size:13px;line-height:1.85;margin:0}
+  @media (max-width:1100px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.feature-grid{grid-template-columns:1fr}}
+
+  /* ——— Flow 01-05 ——— */
+  .flow{padding:140px 0;background:#070707;background-image:
+    radial-gradient(600px 400px at 90% 10%,rgba(200,16,46,.10),transparent 60%);
+  }
+  .flow-head{text-align:center;margin-bottom:80px}
+  .flow-list{position:relative}
+  .flow-list::before{content:"";position:absolute;top:0;bottom:0;left:90px;width:1px;background:linear-gradient(180deg,transparent,var(--line-strong) 8%,var(--line-strong) 92%,transparent)}
+  .flow-item{position:relative;display:grid;grid-template-columns:180px 1fr 1.2fr;gap:48px;padding:40px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .flow-item:last-child{border-bottom:0}
+  .flow-num{font-family:var(--en);font-size:13px;letter-spacing:.3em;color:var(--ink-3);font-weight:700;padding-left:120px;position:relative}
+  .flow-num .big{display:block;font-size:54px;letter-spacing:0;color:#fff;line-height:1;margin-bottom:8px;font-weight:800}
+  .flow-num .big::first-letter{color:var(--accent)}
+  .flow-num::before{content:"";position:absolute;left:84px;top:18px;width:12px;height:12px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px #070707,0 0 0 5px var(--line-strong)}
+  .flow-body h3{font-family:var(--jp-serif);font-size:26px;font-weight:700;margin:0 0 14px;letter-spacing:.04em}
+  .flow-body p{color:var(--ink-2);font-size:14px;line-height:1.9;margin:0}
+  .flow-tags{display:flex;flex-wrap:wrap;gap:10px}
+  .tag{font-size:12px;padding:8px 14px;border:1px solid var(--line);color:var(--ink-2);background:rgba(255,255,255,.02);font-weight:500;letter-spacing:.04em}
+  .tag.r{border-color:rgba(200,16,46,.4);color:#fff;background:rgba(200,16,46,.08)}
+  @media (max-width:900px){
+    .flow-list::before{left:0;display:none}
+    .flow-item{grid-template-columns:1fr;gap:18px;padding:32px 0}
+    .flow-num{padding-left:0}
+    .flow-num::before{display:none}
+  }
+
+  /* ——— Outcomes grid ——— */
+  .outcomes{padding:140px 0;background:#050505}
+  .outcomes-head{margin-bottom:60px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .out-card{background:#0a0a0a;padding:36px 28px;transition:background .3s}
+  .out-card:hover{background:#121212}
+  .out-card .num{font-family:var(--en);font-size:11px;letter-spacing:.32em;font-weight:700;color:var(--accent)}
+  .out-card h5{font-family:var(--jp-serif);font-size:18px;font-weight:700;margin:18px 0 18px;letter-spacing:.04em;line-height:1.45}
+  .out-card ul{list-style:none;margin:0;padding:0}
+  .out-card li{font-size:13px;color:var(--ink-2);padding:7px 0 7px 18px;position:relative;line-height:1.65}
+  .out-card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--accent)}
+  @media (max-width:1100px){.out-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.out-grid{grid-template-columns:1fr}}
+
+  /* ——— Bridges (健康経営・人的資本) ——— */
+  .bridge{padding:140px 0;background:#0a0a0a;border-top:1px solid var(--line)}
+  .bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .bridge-card{padding:60px 48px;background:#0c0c0c}
+  .bridge-card .kicker{font-family:var(--en);font-size:11px;letter-spacing:.32em;color:var(--accent);font-weight:700}
+  .bridge-card h3{font-family:var(--jp-serif);font-size:30px;font-weight:700;margin:16px 0 12px;letter-spacing:.04em;line-height:1.4}
+  .bridge-card .lead{color:var(--ink-2);font-size:14px;line-height:1.95;margin-bottom:28px}
+  .bridge-card .pills{display:flex;flex-wrap:wrap;gap:10px}
+  @media (max-width:880px){.bridge-grid{grid-template-columns:1fr}}
+
+  /* ——— Coach profiles ——— */
+  .coaches{padding:140px 0;background:#050505;position:relative;overflow:hidden}
+  .coaches-bg{position:absolute;inset:0;background-image:
+    radial-gradient(700px 400px at 10% 20%,rgba(200,16,46,.12),transparent 60%),
+    radial-gradient(700px 400px at 90% 80%,rgba(201,161,74,.08),transparent 60%);
+    pointer-events:none}
+  .coaches-head{text-align:center;margin-bottom:80px;position:relative}
+  .coach{display:grid;grid-template-columns:520px 1fr;gap:80px;align-items:center;padding:60px 0;position:relative}
+  .coach + .coach{margin-top:40px;border-top:1px solid var(--line);padding-top:100px}
+  .coach.alt{grid-template-columns:1fr 520px}
+  .coach.alt .coach-img{order:2}
+  .coach-img{position:relative;height:680px;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 70%,#000 100%);border:1px solid var(--line);overflow:hidden}
+  .coach-img::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(120% 80% at 50% 100%,rgba(200,16,46,.25),transparent 60%);
+    z-index:1}
+  .coach-img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:104%;width:auto;z-index:2;filter:contrast(1.05)}
+  .coach-img .badge{position:absolute;top:24px;left:24px;z-index:3;display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--ink);padding:8px 14px;border:1px solid var(--line-strong);background:rgba(0,0,0,.5);backdrop-filter:blur(8px)}
+  .coach-img .name-strip{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:3;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+  .coach-img .name-strip .ja{font-family:var(--jp-serif);font-size:34px;font-weight:700;letter-spacing:.06em;line-height:1}
+  .coach-img .name-strip .en{font-family:var(--en);font-size:11px;letter-spacing:.36em;color:var(--ink-2);font-weight:700;margin-top:8px}
+  .coach-img .name-strip .reg{font-family:var(--en);font-size:10px;color:var(--ink-3);letter-spacing:.3em;font-weight:600;text-align:right}
+  .coach-info .eyebrow{margin-bottom:14px}
+  .coach-info h3{font-family:var(--jp-serif);font-size:clamp(28px,3vw,40px);font-weight:700;margin:0 0 12px;letter-spacing:.03em;line-height:1.35}
+  .coach-info .role{font-size:14px;color:var(--ink-2);letter-spacing:.06em;margin-bottom:30px}
+  .coach-info .quote{font-family:var(--jp-serif);font-size:22px;font-weight:600;line-height:1.7;letter-spacing:.04em;margin:30px 0;padding-left:24px;border-left:2px solid var(--accent)}
+  .coach-info .quote em{font-style:normal;color:var(--accent)}
+  .credits{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .credits li{background:#0a0a0a;padding:16px 20px;font-size:13px;color:var(--ink);display:flex;gap:12px;align-items:flex-start;letter-spacing:.02em}
+  .credits li .ck{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px}
+  .coach.alt .credits li .ck{background:var(--gold)}
+  .stren-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .stren{padding:20px 18px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .stren .n{font-family:var(--en);font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.2em}
+  .stren .t{font-family:var(--jp-serif);font-size:14px;font-weight:700;margin:8px 0 6px;line-height:1.5}
+  .stren .d{font-size:11px;color:var(--ink-2);line-height:1.7}
+  .coach.alt .stren .n{color:var(--gold)}
+  @media (max-width:980px){
+    .coach,.coach.alt{grid-template-columns:1fr;gap:36px}
+    .coach.alt .coach-img{order:0}
+    .coach-img{height:560px}
+    .stren-list{grid-template-columns:1fr}
+  }
+
+  /* ——— Final goal ——— */
+  .finale{padding:140px 0;background:#000;text-align:center;position:relative;overflow:hidden}
+  .finale::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(800px 500px at 50% 100%,rgba(200,16,46,.25),transparent 60%);}
+  .finale-inner{position:relative;z-index:2}
+  .finale .eyebrow{justify-content:center}
+  .finale h2{font-family:var(--jp-serif);font-size:clamp(32px,4.6vw,64px);font-weight:700;line-height:1.45;margin:24px 0 50px;letter-spacing:.04em}
+  .finale h2 em{font-style:normal;color:var(--accent)}
+  .chain{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+  .chain-step{padding:18px 28px;border:1px solid var(--line-strong);font-family:var(--jp-serif);font-size:18px;font-weight:700;letter-spacing:.08em}
+  .chain-step.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .chain-arrow{color:var(--ink-3);font-family:var(--en);font-size:14px}
+
+  /* ——— CTA ——— */
+  .cta{padding:120px 0;background:#0a0a0a;border-top:1px solid var(--line)}
+  .cta-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cta-card{padding:50px 40px;background:#0c0c0c;transition:background .3s;display:flex;flex-direction:column;gap:18px}
+  .cta-card:hover{background:#141414}
+  .cta-card .ico{width:48px;height:48px;border:1px solid var(--line-strong);display:grid;place-items:center}
+  .cta-card .label{font-family:var(--en);font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:700}
+  .cta-card h4{font-family:var(--jp-serif);font-size:22px;font-weight:700;margin:0;letter-spacing:.04em;line-height:1.5}
+  .cta-card p{color:var(--ink-2);font-size:13px;line-height:1.85;margin:0;flex:1}
+  .cta-card .btn{align-self:flex-start;margin-top:14px}
+  @media (max-width:880px){.cta-inner{grid-template-columns:1fr}}
+
+  /* ——— Footer ——— */
+  footer{background:#000;border-top:1px solid var(--line);padding:70px 0 40px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+  .foot h6{font-family:var(--en);font-size:11px;color:var(--ink-3);letter-spacing:.3em;font-weight:700;margin:0 0 18px;text-transform:uppercase}
+  .foot ul{list-style:none;padding:0;margin:0}
+  .foot li{padding:6px 0;font-size:13px;color:var(--ink-2)}
+  .foot li a:hover{color:var(--ink)}
+  .foot p{font-size:13px;color:var(--ink-2);line-height:1.9;margin:14px 0 0;max-width:340px}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--en);font-size:11px;color:var(--ink-3);letter-spacing:.2em;flex-wrap:wrap;gap:14px}
+  @media (max-width:880px){.foot{grid-template-columns:1fr 1fr}}
+
+  /* SVG defaults */
+  svg{display:block}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark"></span>
+      <span class="logo-text">
+        <b>HIGH&nbsp;PERFORMANCE</b>
+        <span>COACHING&nbsp;&nbsp;/&nbsp;&nbsp;FOR&nbsp;BUSINESS</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#vision">ビジョン</a>
+      <a href="#features">特徴</a>
+      <a href="#flow">プログラム</a>
+      <a href="#outcomes">成果</a>
+      <a href="#coaches">コーチ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#download" class="btn btn-ghost">資料DL <span class="arrow"></span></a>
+      <a href="#contact" class="btn btn-primary">無料相談 <span class="arrow"></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-tag"><span class="dot"></span><span>FOR&nbsp;EXECUTIVES&nbsp;・&nbsp;MANAGERS&nbsp;・&nbsp;TEAMS</span></div>
+      <h1>
+        <span class="stroke">個人の力</span>が、<br/>
+        <span class="accent">企業の成果</span>になる。
+      </h1>
+      <p class="hero-lead">
+        トップアスリートを育てるプロコーチが、<br/>
+        身体・栄養・メンタル・思考を整え、<br/>
+        個人の能力を最大化することで、<br/>
+        チーム・組織・企業の<strong style="color:#fff">成果と価値向上</strong>へつなげます。
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">無料相談（オンライン対応） <span class="arrow"></span></a>
+        <a href="#download" class="btn btn-ghost">サービス資料をダウンロード <span class="arrow"></span></a>
+      </div>
+      <div class="hero-marks">
+        <div class="hero-mark">
+          <div class="num">2<span class="pct">人</span></div>
+          <div class="lbl">Olympic Coach<br/>× Performance Nutrition</div>
+        </div>
+        <div class="hero-mark">
+          <div class="num">3<span class="pct">軸</span></div>
+          <div class="lbl">Body / Nutrition<br/>/ Mental</div>
+        </div>
+        <div class="hero-mark">
+          <div class="num">5<span class="pct">STEP</span></div>
+          <div class="lbl">Hearing → Habituation<br/>Full Program Flow</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card hv-yada">
+        <span class="card-bar"></span>
+        <div class="card-meta">
+          <span class="role">Performance Coach</span>
+          <span class="id">No.&nbsp;01</span>
+        </div>
+        <img src="assets/yada.png" alt="矢田 圭一" />
+        <div class="card-name">
+          <div class="ja">矢田 圭一</div>
+          <div class="en-name">KEIICHI&nbsp;&nbsp;YADA</div>
+        </div>
+      </div>
+      <div class="hero-card hv-konno">
+        <span class="card-bar"></span>
+        <div class="card-meta">
+          <span class="role">Nutrition Advisor</span>
+          <span class="id">No.&nbsp;02</span>
+        </div>
+        <img src="assets/konno.png" alt="金野 俊憲" />
+        <div class="card-name">
+          <div class="ja">金野 俊憲</div>
+          <div class="en-name">TOSHINORI&nbsp;&nbsp;KONNO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== VISION / PYRAMID ====== -->
+<section class="pyramid" id="vision">
+  <div class="wrap">
+    <div class="pyramid-head reveal">
+      <div class="eyebrow">VISION&nbsp;／&nbsp;このサービスが目指すもの</div>
+      <h2 class="section-title">個人のパフォーマンス向上が、<br/>すべての成果を生む。</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto">
+        身体・栄養・メンタル・思考を整え、個人の能力を最大化することで<br/>
+        チーム・組織・企業の成果と価値向上へつなげます。
+      </p>
+    </div>
+    <div class="pyramid-grid reveal">
+      <div class="pyr-card">
+        <div class="step">STEP&nbsp;<b>01</b>&nbsp;／&nbsp;FOUNDATION</div>
+        <h3>強い<span class="em">個人</span></h3>
+        <div class="desc">
+          身体・栄養・メンタル・思考を整え、本来のパフォーマンスを最大化する。
+          すべての成果はここから始まります。
+        </div>
+        <div class="tag" style="align-self:flex-start;margin-top:auto">パフォーマンス最大化</div>
+      </div>
+      <div class="pyr-card">
+        <div class="step">STEP&nbsp;<b>02</b>&nbsp;／&nbsp;TEAM&nbsp;＆&nbsp;DIVISION</div>
+        <h3>強い<span class="em">組織・部署</span></h3>
+        <div class="desc">
+          個人の状態改善が連鎖し、生産性・判断力・チーム力が高まる。
+          管理職の負担を減らし、現場のコンディションを底上げします。
+        </div>
+        <div class="tag" style="align-self:flex-start;margin-top:auto">生産性向上・チーム力向上</div>
+      </div>
+      <div class="pyr-card">
+        <div class="step">STEP&nbsp;<b>03</b>&nbsp;／&nbsp;ENTERPRISE</div>
+        <h3>強い<span class="em">企業</span></h3>
+        <div class="desc">
+          人的資本経営・健康経営の実行を通じて、
+          売上・成長・企業価値の向上を実現します。
+        </div>
+        <div class="tag" style="align-self:flex-start;margin-top:auto">成果・成長・企業価値向上</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FEATURES ====== -->
+<section class="strengths" id="features">
+  <div class="wrap">
+    <div class="strength-head reveal">
+      <div>
+        <div class="eyebrow">PROGRAM&nbsp;FEATURES</div>
+        <h2 class="section-title">守りではなく、<br/>売上を上げるための研修。</h2>
+      </div>
+      <p class="section-sub">
+        これまでの「知識・コミュニティ・守り」の研修ではなく、
+        結果を残すアスリートの考え方・食・身体・メンタルを
+        プロコーチの目線で企業に転用するプログラムです。
+      </p>
+    </div>
+    <div class="feature-grid reveal">
+      <div class="feature">
+        <div class="num">01</div>
+        <div class="ico">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="14"/><path d="M18 8v10l7 4"/></svg>
+        </div>
+        <h4>科学的<br/>アプローチ</h4>
+        <p>臨床栄養学・運動・メンタルの専門知識を融合した、エビデンスに基づく科学的メソッド。</p>
+      </div>
+      <div class="feature">
+        <div class="num">02</div>
+        <div class="ico">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 26l8-12 5 7 11-15"/><circle cx="14" cy="14" r="2"/><circle cx="19" cy="21" r="2"/></svg>
+        </div>
+        <h4>体験型<br/>トレーニング</h4>
+        <p>知識を伝えるだけでなく、身体で体感し変化を実感できるトレーニング設計。</p>
+      </div>
+      <div class="feature">
+        <div class="num">03</div>
+        <div class="ico">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="5" width="26" height="26"/><path d="M5 13h26M13 5v26"/></svg>
+        </div>
+        <h4>個別<br/>最適化</h4>
+        <p>役職・課題・状態に合わせ、個人ごとにオーダーメイドの改善プランを提供します。</p>
+      </div>
+      <div class="feature">
+        <div class="num">04</div>
+        <div class="ico">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 18c4-8 10-8 14 0s10 8 14 0"/><circle cx="11" cy="18" r="2"/><circle cx="25" cy="18" r="2"/></svg>
+        </div>
+        <h4>継続<br/>サポート</h4>
+        <p>習慣化まで伴走。AI活用も含め、継続できる仕組みで成果を組織に定着させます。</p>
+      </div>
+      <div class="feature">
+        <div class="num">05</div>
+        <div class="ico">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="18" cy="18" r="14"/><path d="M18 4v28M4 18h28M8 8l20 20M28 8L8 28"/></svg>
+        </div>
+        <h4>オールイン<br/>ワン支援</h4>
+        <p>身体・栄養・メンタル・思考・習慣まで、パフォーマンスの全要素を総合的にサポート。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FLOW ====== -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="flow-head reveal">
+      <div class="eyebrow">PROGRAM&nbsp;FLOW&nbsp;／&nbsp;5&nbsp;STEPS</div>
+      <h2 class="section-title">プログラムの全体フロー</h2>
+      <p class="section-sub" style="margin:0 auto">個人の変化が、チーム・組織・企業を変える。</p>
+    </div>
+    <div class="flow-list reveal">
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">01</span>HEARING</div>
+        <div class="flow-body">
+          <h3>個人目標の明確化（ヒアリング）</h3>
+          <p>理想の自分を明確にし、目標を言語化します。経営者・役員・リーダー・新人それぞれの立場で、求める成果を定義することから始めます。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">理想の働き方</span>
+          <span class="tag r">理想の身体状態</span>
+          <span class="tag r">理想の集中状態</span>
+          <span class="tag r">理想の成果・人生設計</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">02</span>ANALYSIS</div>
+        <div class="flow-body">
+          <h3>現状分析（課題の可視化）</h3>
+          <p>理想と現状のギャップを多角的に分析し、解くべき課題を明確化します。アスリートの現場で用いる評価軸を、ビジネスパーソンに最適化して用います。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag">姿勢・呼吸・睡眠</span>
+          <span class="tag">食習慣・ストレス・疲労</span>
+          <span class="tag">集中力・メンタル状態</span>
+          <span class="tag">行動習慣</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">03</span>METHOD</div>
+        <div class="flow-body">
+          <h3>パフォーマンス向上メソッド設計</h3>
+          <p>個人ごとに必要な改善アプローチを設計。身体・栄養・メンタルの三軸で、無理なく結果に直結する処方を組み立てます。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">機能改善（身体・呼吸・疲労耐性）</span>
+          <span class="tag r">栄養設計（食事・睡眠・エネルギー）</span>
+          <span class="tag r">メンタル設計（自律神経・集中・ストレス）</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">04</span>TRAINING</div>
+        <div class="flow-body">
+          <h3>体験型プログラム実施</h3>
+          <p>実際に身体を動かし、体感することで変化と変容を起こします。座学では届かない領域に、現場のコーチングで踏み込みます。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag">呼吸・姿勢改善</span>
+          <span class="tag">集中力トレーニング</span>
+          <span class="tag">コンディショニング</span>
+          <span class="tag">ストレスマネジメント</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span class="big">05</span>HABIT</div>
+        <div class="flow-body">
+          <h3>習慣化・組織浸透（継続サポート）</h3>
+          <p>日常に落とし込み、続けられる仕組みをつくります。管理職サポートとAI活用による継続教育で、組織のコンディションを底上げします。</p>
+        </div>
+        <div class="flow-tags">
+          <span class="tag r">日常セルフケア・習慣化</span>
+          <span class="tag r">チーム実践・共有</span>
+          <span class="tag r">管理職サポート</span>
+          <span class="tag r">AI活用による継続教育</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== OUTCOMES ====== -->
+<section class="outcomes" id="outcomes">
+  <div class="wrap">
+    <div class="outcomes-head reveal">
+      <div>
+        <div class="eyebrow">EXPECTED&nbsp;OUTCOMES</div>
+        <h2 class="section-title">企業への成果（期待できる変化）</h2>
+      </div>
+      <p class="section-sub">個人 → 組織 → 企業価値、すべてのレイヤーで定量・定性の変化が現れます。</p>
+    </div>
+    <div class="out-grid reveal">
+      <div class="out-card">
+        <div class="num">A&nbsp;／&nbsp;PRODUCTIVITY</div>
+        <h5>生産性向上</h5>
+        <ul>
+          <li>集中力向上</li>
+          <li>判断力向上</li>
+          <li>疲労軽減</li>
+          <li>業務効率の改善</li>
+        </ul>
+      </div>
+      <div class="out-card">
+        <div class="num">B&nbsp;／&nbsp;RETENTION</div>
+        <h5>離職率改善・エンゲージメント</h5>
+        <ul>
+          <li>メンタル不調予防</li>
+          <li>エンゲージメント向上</li>
+          <li>働きやすい環境づくり</li>
+          <li>定着率向上</li>
+        </ul>
+      </div>
+      <div class="out-card">
+        <div class="num">C&nbsp;／&nbsp;BRAND</div>
+        <h5>採用強化・企業ブランディング</h5>
+        <ul>
+          <li>健康経営の推進で企業イメージ向上</li>
+          <li>採用ブランディングに直結</li>
+          <li>人的資本の情報開示にも対応</li>
+        </ul>
+      </div>
+      <div class="out-card">
+        <div class="num">D&nbsp;／&nbsp;ORGANIZATION</div>
+        <h5>組織活性化・管理職負担軽減</h5>
+        <ul>
+          <li>コミュニケーション改善</li>
+          <li>社内の一体感向上</li>
+          <li>部下のコンディション向上</li>
+          <li>管理負荷の軽減</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== BRIDGES ====== -->
+<section class="bridge">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:60px" class="reveal">
+      <div class="eyebrow" style="justify-content:center">CONNECTING&nbsp;TO&nbsp;NATIONAL&nbsp;FRAMEWORKS</div>
+      <h2 class="section-title">健康経営／人的資本経営への接続</h2>
+      <p class="section-sub" style="margin:0 auto">国の制度・開示要件にそのまま接続できる設計です。</p>
+    </div>
+    <div class="bridge-grid reveal">
+      <div class="bridge-card">
+        <div class="kicker">CONNECTION&nbsp;01</div>
+        <h3>健康経営優良法人の<br/>取得・維持を支援</h3>
+        <p class="lead">運動・栄養・メンタルの全領域に対応。健康経営の主要評価項目をプログラム実施そのものでカバーします。</p>
+        <div class="pills">
+          <span class="tag">運動習慣形成</span>
+          <span class="tag">メンタルヘルス対策</span>
+          <span class="tag">コミュニケーション改善</span>
+          <span class="tag">健康意識向上・ストレス軽減</span>
+          <span class="tag">コンディション管理の仕組み化</span>
+        </div>
+      </div>
+      <div class="bridge-card">
+        <div class="kicker">CONNECTION&nbsp;02</div>
+        <h3>「人への投資」が<br/>企業を強くする</h3>
+        <p class="lead">人的資本経営の中核である「人材定着・成長・エンゲージメント」を、現場の行動レベルで動かします。情報開示にも対応。</p>
+        <div class="pills">
+          <span class="tag r">人材定着</span>
+          <span class="tag r">パフォーマンス向上</span>
+          <span class="tag r">エンゲージメント向上</span>
+          <span class="tag r">組織の持続的成長</span>
+          <span class="tag r">人的資本の情報開示</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- value flow -->
+    <div class="reveal" style="margin-top:60px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="chain-step">個人の状態改善</div>
+      <span class="chain-arrow">━━▶</span>
+      <div class="chain-step">組織力向上</div>
+      <span class="chain-arrow">━━▶</span>
+      <div class="chain-step" style="background:var(--accent);border-color:var(--accent)">企業価値向上</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COACHES ====== -->
+<section class="coaches" id="coaches">
+  <div class="coaches-bg"></div>
+  <div class="wrap">
+    <div class="coaches-head reveal">
+      <div class="eyebrow" style="justify-content:center">COACHES&nbsp;／&nbsp;実績で結果を残してきた、現場のプロ</div>
+      <h2 class="section-title">アスリートを育てる目線で、<br/>あなたの組織を鍛える。</h2>
+    </div>
+
+    <!-- Yada -->
+    <div class="coach reveal">
+      <div class="coach-img">
+        <span class="badge"><span style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%"></span>&nbsp;COACH&nbsp;／&nbsp;No.01</span>
+        <img src="assets/yada.png" alt="矢田圭一 プロフィール"/>
+        <div class="name-strip">
+          <div>
+            <div class="ja">矢田 圭一</div>
+            <div class="en">KEIICHI&nbsp;&nbsp;YADA</div>
+          </div>
+          <div class="reg">VALZA&nbsp;CEO</div>
+        </div>
+      </div>
+      <div class="coach-info">
+        <div class="eyebrow">PERFORMANCE&nbsp;COACH&nbsp;／&nbsp;OLYMPIC&nbsp;TEAM&nbsp;COACH</div>
+        <h3>パフォーマンスコーチ／<br/>オリンピック日本代表コーチ</h3>
+        <div class="role">VALZA 代表 ／ 全日本最優秀コーチ賞 受賞</div>
+
+        <ul class="credits">
+          <li><span class="ck"></span>オリンピック日本代表コーチ</li>
+          <li><span class="ck"></span>全日本最優秀コーチ賞 受賞</li>
+          <li><span class="ck"></span>オリンピック選手育成経験</li>
+          <li><span class="ck"></span>RIZIN 選手指導</li>
+          <li><span class="ck"></span>第一空挺団 出身</li>
+          <li><span class="ck"></span>専門知識 × 現場経験</li>
+        </ul>
+
+        <div class="quote">
+          あらゆるフィールドで通用する<br/>
+          <em>パフォーマンス向上の本質</em>を提供します。
+        </div>
+
+        <div class="stren-list">
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;01</div>
+            <div class="t">運動・機能改善</div>
+            <div class="d">身体の動かし方・呼吸・疲労耐性を、現場の運動科学で再設計。</div>
+          </div>
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;02</div>
+            <div class="t">栄養・コンディショニング</div>
+            <div class="d">食事と回復を設計し、出力できるエネルギーを最大化。</div>
+          </div>
+          <div class="stren">
+            <div class="n">EXPERTISE&nbsp;03</div>
+            <div class="t">メンタル・思考</div>
+            <div class="d">本番で結果を出すアスリートの思考様式をビジネスに。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Konno -->
+    <div class="coach alt reveal">
+      <div class="coach-img" style="background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 70%,#000 100%)">
+        <span class="badge"><span style="display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%"></span>&nbsp;ADVISOR&nbsp;／&nbsp;No.02</span>
+        <img src="assets/konno.png" alt="金野俊憲 プロフィール"/>
+        <div class="name-strip">
+          <div>
+            <div class="ja">金野 俊憲</div>
+            <div class="en">TOSHINORI&nbsp;&nbsp;KONNO</div>
+          </div>
+          <div class="reg">REFEREE&nbsp;／&nbsp;BREAKING&nbsp;DOWN</div>
+        </div>
+      </div>
+      <div class="coach-info">
+        <div class="eyebrow">PERFORMANCE&nbsp;NUTRITION&nbsp;ADVISOR</div>
+        <h3>現場 × エビデンス × 栄養の実践で、<br/>結果に変えるパフォーマンス設計を。</h3>
+        <div class="role">パフォーマンス栄養アドバイザー ／ ブレイキングダウン公式レフリー ／ LIGHT CLINIC GINZA 顧問</div>
+
+        <ul class="credits">
+          <li><span class="ck"></span>ブレイキングダウン 公式レフリー</li>
+          <li><span class="ck"></span>がんクリニック顧問（LIGHT CLINIC GINZA）</li>
+          <li><span class="ck"></span>臨床試験を得意とする</li>
+          <li><span class="ck"></span>栄養設計／サプリメント設計</li>
+          <li><span class="ck"></span>コンディショニング／回復戦略</li>
+          <li><span class="ck"></span>組織パフォーマンス向上</li>
+        </ul>
+
+        <div class="quote" style="border-left-color:var(--gold)">
+          現場の実践と臨床のエビデンスをつなぐ、<br/>
+          <em style="color:var(--gold)">信頼の専門家</em>。
+        </div>
+
+        <div class="stren-list">
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;01</div>
+            <div class="t">ブレない<br/>公平な判断</div>
+            <div class="d">公式レフリーとして培った揺るがない基準と中立の視点。</div>
+          </div>
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;02</div>
+            <div class="t">臨床 × 栄養の<br/>希少な知見</div>
+            <div class="d">原料レベルから語れる、エビデンスの作り方・読み方の専門性。</div>
+          </div>
+          <div class="stren">
+            <div class="n">STRENGTH&nbsp;03</div>
+            <div class="t">競技知見の<br/>ビジネス翻訳</div>
+            <div class="d">アスリートの「勝つ準備」を経営の判断力と社員の力に翻訳。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== FINAL GOAL ====== -->
+<section class="finale">
+  <div class="finale-inner wrap reveal">
+    <div class="eyebrow">FINAL&nbsp;GOAL</div>
+    <h2>
+      社員一人ひとりが本来の力を発揮し、<br/>
+      企業が持続的に成長できる<em>組織へ。</em>
+    </h2>
+    <div class="chain">
+      <div class="chain-step">強い個人</div>
+      <span class="chain-arrow">━▶</span>
+      <div class="chain-step">強いチーム</div>
+      <span class="chain-arrow">━▶</span>
+      <div class="chain-step">強い組織</div>
+      <span class="chain-arrow">━▶</span>
+      <div class="chain-step active">強い企業</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:50px" class="reveal">
+      <div class="eyebrow" style="justify-content:center">START&nbsp;／&nbsp;まずはここから</div>
+      <h2 class="section-title">無料体験・説明会、実施中。</h2>
+      <p class="section-sub" style="margin:0 auto">経営課題・組織課題に合わせて、最適なプログラム設計をご提案します。</p>
+    </div>
+    <div class="cta-inner reveal">
+      <div class="cta-card">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h18v12H7l-4 4z"/></svg>
+        </div>
+        <div class="label">CONSULTATION</div>
+        <h4>無料相談<br/>（オンライン対応）</h4>
+        <p>役員・人事・現場、どの層の課題からでも。30分のヒアリングから最適な入口をご提案します。</p>
+        <a href="#" class="btn btn-primary">相談を予約する <span class="arrow"></span></a>
+      </div>
+      <div class="cta-card" id="download">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v14m-5-5l5 5 5-5M4 21h16"/></svg>
+        </div>
+        <div class="label">DOWNLOAD</div>
+        <h4>資料ダウンロード<br/>（サービス詳細）</h4>
+        <p>プログラム概要・料金体系・導入事例・実施フロー。意思決定に必要な情報を1冊にまとめています。</p>
+        <a href="#" class="btn btn-ghost">資料をダウンロード <span class="arrow"></span></a>
+      </div>
+      <div class="cta-card">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+        </div>
+        <div class="label">TRIAL</div>
+        <h4>無料体験・<br/>説明会の予約</h4>
+        <p>実際にコーチのセッションを体感いただけます。経営者・人事ご担当者の対面/オンライン両対応。</p>
+        <a href="#" class="btn btn-ghost">体験会に申し込む <span class="arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top">
+          <span class="logo-mark"></span>
+          <span class="logo-text">
+            <b>HIGH&nbsp;PERFORMANCE</b>
+            <span>COACHING&nbsp;／&nbsp;FOR&nbsp;BUSINESS</span>
+          </span>
+        </a>
+        <p>
+          トップアスリートを育てるプロコーチが、企業の人的資本経営・健康経営を支える、ハイクラスの研修コーチ派遣事業。
+        </p>
+      </div>
+      <div>
+        <h6>SERVICE</h6>
+        <ul>
+          <li><a href="#vision">サービスビジョン</a></li>
+          <li><a href="#features">プログラム特徴</a></li>
+          <li><a href="#flow">5ステップフロー</a></li>
+          <li><a href="#outcomes">期待できる成果</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>COACHES</h6>
+        <ul>
+          <li><a href="#coaches">矢田 圭一</a></li>
+          <li><a href="#coaches">金野 俊憲</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>CONTACT</h6>
+        <ul>
+          <li><a href="#contact">無料相談</a></li>
+          <li><a href="#download">資料ダウンロード</a></li>
+          <li><a href="#contact">体験会・説明会</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HIGH PERFORMANCE COACHING ／ VALZA × REFEREE KONNO</span>
+      <span>JAPAN&nbsp;／&nbsp;ONLINE&nbsp;・&nbsp;OFFLINE</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav state
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',(e)=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){
+        const el=document.querySelector(id);
+        if(el){ e.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 60, behavior:'smooth'}); }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
